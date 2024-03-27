@@ -1,0 +1,54 @@
+target C {timeout : 10 sec}
+
+
+
+reactor Source(start: time = 100 ms, incr: time = 100 ms){
+    output out: string
+    state interval: time = start
+    logical action a
+
+    reaction(startup) -> a {=
+        lf_schedule(a, self-> start);
+    =}
+    
+    reaction(a) -> a, out {=
+        instant_t elapsed_logical_time = lf_time_logical_elapsed();
+        self -> interval += self -> incr;
+        lf_set(out, "hej");
+        lf_schedule(a, self->interval);
+    =}
+
+}
+
+reactor Sink{
+    input in: int
+
+    reaction(in) {=
+        printf("%d \n", in -> value);
+    =}
+}
+
+reactor Stringln{
+    preamble {=
+        #include <string.h>
+    =}
+    input in: string
+    output out: int
+
+    reaction(in) -> out {=
+        printf("%s \n", in -> value);
+        
+        lf_set(out, strlen(in->value));
+    =}
+}
+
+main reactor{
+    preamble {=
+        #include <string.h>
+    =}
+    Source = new Source()
+    Sink = new Sink()
+    Stringln = new Stringln()
+    Source.out -> Stringln.in
+    Stringln.out -> Sink.in
+}

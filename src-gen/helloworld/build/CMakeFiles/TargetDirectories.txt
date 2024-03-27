@@ -1,0 +1,14 @@
+/Users/sailor/Developer/EDAN15/src-gen/helloworld/build/CMakeFiles/helloworld.dir
+/Users/sailor/Developer/EDAN15/src-gen/helloworld/build/CMakeFiles/edit_cache.dir
+/Users/sailor/Developer/EDAN15/src-gen/helloworld/build/CMakeFiles/rebuild_cache.dir
+/Users/sailor/Developer/EDAN15/src-gen/helloworld/build/CMakeFiles/list_install_components.dir
+/Users/sailor/Developer/EDAN15/src-gen/helloworld/build/CMakeFiles/install.dir
+/Users/sailor/Developer/EDAN15/src-gen/helloworld/build/CMakeFiles/install/local.dir
+/Users/sailor/Developer/EDAN15/src-gen/helloworld/build/CMakeFiles/install/strip.dir
+/Users/sailor/Developer/EDAN15/src-gen/helloworld/build/core/CMakeFiles/core.dir
+/Users/sailor/Developer/EDAN15/src-gen/helloworld/build/core/CMakeFiles/edit_cache.dir
+/Users/sailor/Developer/EDAN15/src-gen/helloworld/build/core/CMakeFiles/rebuild_cache.dir
+/Users/sailor/Developer/EDAN15/src-gen/helloworld/build/core/CMakeFiles/list_install_components.dir
+/Users/sailor/Developer/EDAN15/src-gen/helloworld/build/core/CMakeFiles/install.dir
+/Users/sailor/Developer/EDAN15/src-gen/helloworld/build/core/CMakeFiles/install/local.dir
+/Users/sailor/Developer/EDAN15/src-gen/helloworld/build/core/CMakeFiles/install/strip.dir
