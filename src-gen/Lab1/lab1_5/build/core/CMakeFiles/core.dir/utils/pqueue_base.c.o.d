@@ -1,5 +1,5 @@
 core/CMakeFiles/core.dir/utils/pqueue_base.c.o: \
-  /Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/core/utils/pqueue_base.c \
+  /Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/core/utils/pqueue_base.c \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/stdlib.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/Availability.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/AvailabilityVersions.h \
@@ -82,8 +82,8 @@ core/CMakeFiles/core.dir/utils/pqueue_base.c.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/secure/_string.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/assert.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/14.0.3/include/stdbool.h \
-  /Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/core/../include/core/utils/pqueue_base.h \
+  /Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/core/../include/core/utils/pqueue_base.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/14.0.3/include/stddef.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/14.0.3/include/__stddef_max_align_t.h \
-  /Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/core/../include/core/utils/util.h \
+  /Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/core/../include/core/utils/util.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/14.0.3/include/stdarg.h

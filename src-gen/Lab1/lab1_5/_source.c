@@ -8,9 +8,9 @@
 void _sourcereaction_function_0(void* instance_args) {
     _source_self_t* self = (_source_self_t*)instance_args; SUPPRESS_UNUSED_WARNING(self);
     _source_a_t* a = &self->_lf_a;
-    #line 11 "/Users/sailor/Developer/EDAN15/Lab1/lab1_5.lf"
+    #line 11 "/Users/sailor/Developer/git/EDAN15/Lab1/lab1_5.lf"
     lf_schedule(a, self-> start);
-#line 14 "/Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/_source.c"
+#line 14 "/Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/_source.c"
 }
 #include "include/api/set_undef.h"
 #include "include/api/set.h"
@@ -25,12 +25,12 @@ void _sourcereaction_function_1(void* instance_args) {
     _lf_replace_template_token((token_template_t*)a, (self->_lf__a.tmplt.token));
     lf_critical_section_exit(self->base.environment);
     _source_out_t* out = &self->_lf_out;
-    #line 15 "/Users/sailor/Developer/EDAN15/Lab1/lab1_5.lf"
+    #line 15 "/Users/sailor/Developer/git/EDAN15/Lab1/lab1_5.lf"
     instant_t elapsed_logical_time = lf_time_logical_elapsed();
     self -> interval += self -> incr;
     lf_set(out, "hej");
     lf_schedule(a, self->interval);
-#line 34 "/Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/_source.c"
+#line 34 "/Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/_source.c"
 }
 #include "include/api/set_undef.h"
 _source_self_t* new__source() {

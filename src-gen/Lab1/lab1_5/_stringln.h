@@ -1,8 +1,8 @@
 #ifndef _STRINGLN_H
 #define _STRINGLN_H
 #include "include/core/reactor.h"
-#ifndef TOP_LEVEL_PREAMBLE_1399883754_H
-#define TOP_LEVEL_PREAMBLE_1399883754_H
+#ifndef TOP_LEVEL_PREAMBLE_2120221675_H
+#define TOP_LEVEL_PREAMBLE_2120221675_H
 #endif
 typedef struct {
     token_type_t type;
@@ -62,10 +62,10 @@ typedef struct {
 } _stringln_out_int_t;
 typedef struct {
     struct self_base_t base;
-#line 66 "/Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/_stringln.h"
-    #line 35 "/Users/sailor/Developer/EDAN15/Lab1/lab1_5.lf"
+#line 66 "/Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/_stringln.h"
+    #line 35 "/Users/sailor/Developer/git/EDAN15/Lab1/lab1_5.lf"
     int total;
-#line 69 "/Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/_stringln.h"
+#line 69 "/Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/_stringln.h"
     _stringln_in_t* _lf_in;
     // width of -2 indicates that it is not a multiport.
     int _lf_in_width;

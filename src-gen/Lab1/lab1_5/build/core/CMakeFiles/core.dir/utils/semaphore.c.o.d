@@ -1,8 +1,8 @@
 core/CMakeFiles/core.dir/utils/semaphore.c.o: \
-  /Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/core/utils/semaphore.c \
-  /Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/core/../include/core/utils/semaphore.h \
-  /Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/core/../include/core/platform.h \
-  /Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/core/../include/core/tag.h \
+  /Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/core/utils/semaphore.c \
+  /Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/core/../include/core/utils/semaphore.h \
+  /Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/core/../include/core/platform.h \
+  /Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/core/../include/core/tag.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/14.0.3/include/stdint.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/stdint.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/sys/_types/_int8_t.h \
@@ -39,7 +39,7 @@ core/CMakeFiles/core.dir/utils/semaphore.c.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/arm/_limits.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/sys/syslimits.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/assert.h \
-  /Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/core/../include/core/platform/lf_macos_support.h \
+  /Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/core/../include/core/platform/lf_macos_support.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/time.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/_types.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/Availability.h \
@@ -50,11 +50,11 @@ core/CMakeFiles/core.dir/utils/semaphore.c.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/sys/_types/_size_t.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/sys/_types/_time_t.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/sys/_types/_timespec.h \
-  /Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/core/../include/core/platform/lf_tag_64_32.h \
+  /Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/core/../include/core/platform/lf_tag_64_32.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/14.0.3/include/inttypes.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/inttypes.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/sys/_types/_wchar_t.h \
-  /Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/core/../include/core/platform/lf_POSIX_threads_support.h \
+  /Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/core/../include/core/platform/lf_POSIX_threads_support.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/pthread.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/pthread/sched.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/pthread/pthread_impl.h \

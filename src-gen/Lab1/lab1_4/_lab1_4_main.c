@@ -3,9 +3,9 @@
 #include "include/lab1_4/lab1_4.h"
 #include "_lab1_4_main.h"
 // *********** From the preamble, verbatim:
-#line 47 "/Users/sailor/Developer/EDAN15/Lab1/lab1_4.lf"
+#line 47 "/Users/sailor/Developer/git/EDAN15/Lab1/lab1_4.lf"
 #include <string.h>
-#line 9 "/Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_4/_lab1_4_main.c"
+#line 9 "/Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_4/_lab1_4_main.c"
 
 // *********** End of preamble.
 // ***** Start of method declarations.

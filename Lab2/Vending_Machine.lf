@@ -1,0 +1,113 @@
+target C 
+import Output, Input from "vm_extra.lf"
+
+reactor Machine(stock:int[] = {2,2,2}){
+    preamble {=
+        #include <string.h>
+        enum machine_mode {
+            Idle = 0, 
+            Selected = 1, 
+            Payed = 2};
+    =}
+    input cancel:bool
+    input sel:int
+    input coin:bool
+
+    output change:bool
+    output beverage:int
+
+    state Machine_mode: int = 0;
+    state bev: int = 0;
+
+    reaction(coin, sel, cancel) -> change, beverage {=
+        
+        
+        if(coin -> is_present){
+        printf("[DEBUG] Coin detected. State: %d \n", self -> Machine_mode);
+            switch(self -> Machine_mode) {
+                case Idle:
+                    self -> Machine_mode = Payed;
+                    break;
+                case Selected:
+                    if(self -> stock[self  -> bev] != 0){
+                        lf_set(beverage, self -> bev);
+                        self -> stock[self  -> bev]--;
+                        self -> Machine_mode = Idle;
+                    }else{
+                        self -> Machine_mode = Selected;
+                    }
+                    break;
+                case Payed:
+                    lf_set(change, true);
+                    self -> Machine_mode = Payed;
+                    break;
+            }
+        }
+
+        if(sel -> is_present){
+            printf("[DEBUG] Selection detected. State: %d \n", self -> Machine_mode);
+            switch(self -> Machine_mode) {
+                case Idle:
+                    if(sel -> value <= 2 && sel -> value >= 0){
+                        self -> Machine_mode = Selected;
+                        self -> bev = sel -> value;
+                    }else{
+                        self -> Machine_mode = Idle;
+                    }
+                    break;
+                case Selected:
+                    if(sel -> value <= 2 && sel -> value >= 0){
+                        self -> Machine_mode = Selected;
+                        self -> bev = sel -> value;
+                    }else{
+                        self -> Machine_mode = Idle;
+                    }
+                    break;
+                case Payed:
+                    if(sel -> value <= 2 && sel -> value >= 0){
+                        if(self -> stock[sel -> value] != 0){
+                            lf_set(beverage, sel -> value);
+                            self -> stock[sel  -> value]--;
+                            self -> Machine_mode = Idle;
+                            self -> bev = 0;
+                        }else{
+                            self -> Machine_mode = Payed;
+                        }
+                    }else{
+                        self -> Machine_mode = Payed;
+                    }
+                    break;
+            }
+        }
+
+        if(cancel -> is_present){
+        printf("[DEBUG] Cancellation detected. State: %d \n", self -> Machine_mode);
+        switch(self -> Machine_mode) {
+                case Idle:
+                    self -> Machine_mode = Idle;
+                    break;
+                case Selected:
+                    self -> Machine_mode = Idle;
+                    self -> bev = 0;
+                    break;
+                case Payed:
+                    lf_set(change, true);
+                    self -> Machine_mode = Idle;
+                    break;
+            }
+        }
+    =}
+
+}
+
+main reactor{
+    Input = new Input()
+    Output = new Output()
+    Machine = new Machine()
+    
+    Input.cancel -> Machine.cancel
+    Input.sel -> Machine.sel
+    Input.coin -> Machine.coin
+    Machine.change -> Output.change
+    Machine.beverage -> Output.beverage
+}

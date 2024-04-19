@@ -2,20 +2,14 @@ target C {timeout : 10 sec}
 
 
 
-reactor Source(start: time = 100 ms, incr: time = 100 ms){
-    output out: int
-    state interval: time = start
-    logical action a
 
-    reaction(startup) -> a {=
-        lf_schedule(a, self-> start);
-    =}
-    
-    reaction(a) -> a, out {=
+reactor Source{
+    output out: int
+    timer t(1 sec, 1 sec)
+    logical action a
+    reaction(t) -> out {=
         instant_t elapsed_logical_time = lf_time_logical_elapsed();
-        self -> interval += self -> incr;
         lf_set(out, 2);
-        lf_schedule(a, self->interval);
     =}
 
 }

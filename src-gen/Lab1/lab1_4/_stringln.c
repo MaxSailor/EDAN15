@@ -3,9 +3,9 @@
 #include "include/lab1_4/Stringln.h"
 #include "_stringln.h"
 // *********** From the preamble, verbatim:
-#line 33 "/Users/sailor/Developer/EDAN15/Lab1/lab1_4.lf"
+#line 33 "/Users/sailor/Developer/git/EDAN15/Lab1/lab1_4.lf"
 #include <string.h>
-#line 9 "/Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_4/_stringln.c"
+#line 9 "/Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_4/_stringln.c"
 
 // *********** End of preamble.
 // ***** Start of method declarations.
@@ -16,11 +16,11 @@ void _stringlnreaction_function_0(void* instance_args) {
     _stringln_in_t* in = self->_lf_in;
     int in_width = self->_lf_in_width; SUPPRESS_UNUSED_WARNING(in_width);
     _stringln_out_t* out = &self->_lf_out;
-    #line 39 "/Users/sailor/Developer/EDAN15/Lab1/lab1_4.lf"
+    #line 39 "/Users/sailor/Developer/git/EDAN15/Lab1/lab1_4.lf"
     printf("%s \n", in -> value);
     
     lf_set(out, strlen(in->value));
-#line 24 "/Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_4/_stringln.c"
+#line 24 "/Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_4/_stringln.c"
 }
 #include "include/api/set_undef.h"
 _stringln_self_t* new__stringln() {

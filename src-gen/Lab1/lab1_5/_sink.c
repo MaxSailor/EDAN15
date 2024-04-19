@@ -9,9 +9,9 @@ void _sinkreaction_function_0(void* instance_args) {
     _sink_self_t* self = (_sink_self_t*)instance_args; SUPPRESS_UNUSED_WARNING(self);
     _sink_in_t* in = self->_lf_in;
     int in_width = self->_lf_in_width; SUPPRESS_UNUSED_WARNING(in_width);
-    #line 27 "/Users/sailor/Developer/EDAN15/Lab1/lab1_5.lf"
+    #line 27 "/Users/sailor/Developer/git/EDAN15/Lab1/lab1_5.lf"
     printf("%d \n", in -> value);
-#line 15 "/Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/_sink.c"
+#line 15 "/Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/_sink.c"
 }
 #include "include/api/set_undef.h"
 _sink_self_t* new__sink() {

@@ -1,8 +1,8 @@
 #ifndef _sink_H
 #define _sink_H
 #ifndef _SINK_H // necessary for arduino-cli, which automatically includes headers that are not used
-#ifndef TOP_LEVEL_PREAMBLE_1786653929_H
-#define TOP_LEVEL_PREAMBLE_1786653929_H
+#ifndef TOP_LEVEL_PREAMBLE_1250239514_H
+#define TOP_LEVEL_PREAMBLE_1250239514_H
 #endif
 #ifdef __cplusplus
 extern "C" {

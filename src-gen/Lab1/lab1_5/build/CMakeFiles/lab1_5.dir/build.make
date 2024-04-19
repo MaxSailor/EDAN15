@@ -53,10 +53,10 @@ RM = /opt/homebrew/Cellar/cmake/3.29.0/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5
+CMAKE_SOURCE_DIR = /Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/build
+CMAKE_BINARY_DIR = /Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/lab1_5.dir/depend.make
@@ -70,102 +70,102 @@ include CMakeFiles/lab1_5.dir/progress.make
 include CMakeFiles/lab1_5.dir/flags.make
 
 CMakeFiles/lab1_5.dir/lib/schedule.c.o: CMakeFiles/lab1_5.dir/flags.make
-CMakeFiles/lab1_5.dir/lib/schedule.c.o: /Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/lib/schedule.c
+CMakeFiles/lab1_5.dir/lib/schedule.c.o: /Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/lib/schedule.c
 CMakeFiles/lab1_5.dir/lib/schedule.c.o: CMakeFiles/lab1_5.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/lab1_5.dir/lib/schedule.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/lab1_5.dir/lib/schedule.c.o -MF CMakeFiles/lab1_5.dir/lib/schedule.c.o.d -o CMakeFiles/lab1_5.dir/lib/schedule.c.o -c /Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/lib/schedule.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/lab1_5.dir/lib/schedule.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/lab1_5.dir/lib/schedule.c.o -MF CMakeFiles/lab1_5.dir/lib/schedule.c.o.d -o CMakeFiles/lab1_5.dir/lib/schedule.c.o -c /Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/lib/schedule.c
 
 CMakeFiles/lab1_5.dir/lib/schedule.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/lab1_5.dir/lib/schedule.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/lib/schedule.c > CMakeFiles/lab1_5.dir/lib/schedule.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/lib/schedule.c > CMakeFiles/lab1_5.dir/lib/schedule.c.i
 
 CMakeFiles/lab1_5.dir/lib/schedule.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/lab1_5.dir/lib/schedule.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/lib/schedule.c -o CMakeFiles/lab1_5.dir/lib/schedule.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/lib/schedule.c -o CMakeFiles/lab1_5.dir/lib/schedule.c.s
 
 CMakeFiles/lab1_5.dir/_lab1_5_main.c.o: CMakeFiles/lab1_5.dir/flags.make
-CMakeFiles/lab1_5.dir/_lab1_5_main.c.o: /Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/_lab1_5_main.c
+CMakeFiles/lab1_5.dir/_lab1_5_main.c.o: /Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/_lab1_5_main.c
 CMakeFiles/lab1_5.dir/_lab1_5_main.c.o: CMakeFiles/lab1_5.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/lab1_5.dir/_lab1_5_main.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/lab1_5.dir/_lab1_5_main.c.o -MF CMakeFiles/lab1_5.dir/_lab1_5_main.c.o.d -o CMakeFiles/lab1_5.dir/_lab1_5_main.c.o -c /Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/_lab1_5_main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/lab1_5.dir/_lab1_5_main.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/lab1_5.dir/_lab1_5_main.c.o -MF CMakeFiles/lab1_5.dir/_lab1_5_main.c.o.d -o CMakeFiles/lab1_5.dir/_lab1_5_main.c.o -c /Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/_lab1_5_main.c
 
 CMakeFiles/lab1_5.dir/_lab1_5_main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/lab1_5.dir/_lab1_5_main.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/_lab1_5_main.c > CMakeFiles/lab1_5.dir/_lab1_5_main.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/_lab1_5_main.c > CMakeFiles/lab1_5.dir/_lab1_5_main.c.i
 
 CMakeFiles/lab1_5.dir/_lab1_5_main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/lab1_5.dir/_lab1_5_main.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/_lab1_5_main.c -o CMakeFiles/lab1_5.dir/_lab1_5_main.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/_lab1_5_main.c -o CMakeFiles/lab1_5.dir/_lab1_5_main.c.s
 
 CMakeFiles/lab1_5.dir/_source.c.o: CMakeFiles/lab1_5.dir/flags.make
-CMakeFiles/lab1_5.dir/_source.c.o: /Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/_source.c
+CMakeFiles/lab1_5.dir/_source.c.o: /Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/_source.c
 CMakeFiles/lab1_5.dir/_source.c.o: CMakeFiles/lab1_5.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/lab1_5.dir/_source.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/lab1_5.dir/_source.c.o -MF CMakeFiles/lab1_5.dir/_source.c.o.d -o CMakeFiles/lab1_5.dir/_source.c.o -c /Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/_source.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/lab1_5.dir/_source.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/lab1_5.dir/_source.c.o -MF CMakeFiles/lab1_5.dir/_source.c.o.d -o CMakeFiles/lab1_5.dir/_source.c.o -c /Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/_source.c
 
 CMakeFiles/lab1_5.dir/_source.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/lab1_5.dir/_source.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/_source.c > CMakeFiles/lab1_5.dir/_source.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/_source.c > CMakeFiles/lab1_5.dir/_source.c.i
 
 CMakeFiles/lab1_5.dir/_source.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/lab1_5.dir/_source.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/_source.c -o CMakeFiles/lab1_5.dir/_source.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/_source.c -o CMakeFiles/lab1_5.dir/_source.c.s
 
 CMakeFiles/lab1_5.dir/_sink.c.o: CMakeFiles/lab1_5.dir/flags.make
-CMakeFiles/lab1_5.dir/_sink.c.o: /Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/_sink.c
+CMakeFiles/lab1_5.dir/_sink.c.o: /Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/_sink.c
 CMakeFiles/lab1_5.dir/_sink.c.o: CMakeFiles/lab1_5.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/lab1_5.dir/_sink.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/lab1_5.dir/_sink.c.o -MF CMakeFiles/lab1_5.dir/_sink.c.o.d -o CMakeFiles/lab1_5.dir/_sink.c.o -c /Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/_sink.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/lab1_5.dir/_sink.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/lab1_5.dir/_sink.c.o -MF CMakeFiles/lab1_5.dir/_sink.c.o.d -o CMakeFiles/lab1_5.dir/_sink.c.o -c /Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/_sink.c
 
 CMakeFiles/lab1_5.dir/_sink.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/lab1_5.dir/_sink.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/_sink.c > CMakeFiles/lab1_5.dir/_sink.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/_sink.c > CMakeFiles/lab1_5.dir/_sink.c.i
 
 CMakeFiles/lab1_5.dir/_sink.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/lab1_5.dir/_sink.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/_sink.c -o CMakeFiles/lab1_5.dir/_sink.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/_sink.c -o CMakeFiles/lab1_5.dir/_sink.c.s
 
 CMakeFiles/lab1_5.dir/_stringln.c.o: CMakeFiles/lab1_5.dir/flags.make
-CMakeFiles/lab1_5.dir/_stringln.c.o: /Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/_stringln.c
+CMakeFiles/lab1_5.dir/_stringln.c.o: /Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/_stringln.c
 CMakeFiles/lab1_5.dir/_stringln.c.o: CMakeFiles/lab1_5.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/lab1_5.dir/_stringln.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/lab1_5.dir/_stringln.c.o -MF CMakeFiles/lab1_5.dir/_stringln.c.o.d -o CMakeFiles/lab1_5.dir/_stringln.c.o -c /Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/_stringln.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/lab1_5.dir/_stringln.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/lab1_5.dir/_stringln.c.o -MF CMakeFiles/lab1_5.dir/_stringln.c.o.d -o CMakeFiles/lab1_5.dir/_stringln.c.o -c /Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/_stringln.c
 
 CMakeFiles/lab1_5.dir/_stringln.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/lab1_5.dir/_stringln.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/_stringln.c > CMakeFiles/lab1_5.dir/_stringln.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/_stringln.c > CMakeFiles/lab1_5.dir/_stringln.c.i
 
 CMakeFiles/lab1_5.dir/_stringln.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/lab1_5.dir/_stringln.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/_stringln.c -o CMakeFiles/lab1_5.dir/_stringln.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/_stringln.c -o CMakeFiles/lab1_5.dir/_stringln.c.s
 
-CMakeFiles/lab1_5.dir/__lf_gendelay_3ed783c7.c.o: CMakeFiles/lab1_5.dir/flags.make
-CMakeFiles/lab1_5.dir/__lf_gendelay_3ed783c7.c.o: /Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/__lf_gendelay_3ed783c7.c
-CMakeFiles/lab1_5.dir/__lf_gendelay_3ed783c7.c.o: CMakeFiles/lab1_5.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/lab1_5.dir/__lf_gendelay_3ed783c7.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/lab1_5.dir/__lf_gendelay_3ed783c7.c.o -MF CMakeFiles/lab1_5.dir/__lf_gendelay_3ed783c7.c.o.d -o CMakeFiles/lab1_5.dir/__lf_gendelay_3ed783c7.c.o -c /Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/__lf_gendelay_3ed783c7.c
+CMakeFiles/lab1_5.dir/__lf_gendelay_c09f7d0a.c.o: CMakeFiles/lab1_5.dir/flags.make
+CMakeFiles/lab1_5.dir/__lf_gendelay_c09f7d0a.c.o: /Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/__lf_gendelay_c09f7d0a.c
+CMakeFiles/lab1_5.dir/__lf_gendelay_c09f7d0a.c.o: CMakeFiles/lab1_5.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/lab1_5.dir/__lf_gendelay_c09f7d0a.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/lab1_5.dir/__lf_gendelay_c09f7d0a.c.o -MF CMakeFiles/lab1_5.dir/__lf_gendelay_c09f7d0a.c.o.d -o CMakeFiles/lab1_5.dir/__lf_gendelay_c09f7d0a.c.o -c /Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/__lf_gendelay_c09f7d0a.c
 
-CMakeFiles/lab1_5.dir/__lf_gendelay_3ed783c7.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/lab1_5.dir/__lf_gendelay_3ed783c7.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/__lf_gendelay_3ed783c7.c > CMakeFiles/lab1_5.dir/__lf_gendelay_3ed783c7.c.i
+CMakeFiles/lab1_5.dir/__lf_gendelay_c09f7d0a.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/lab1_5.dir/__lf_gendelay_c09f7d0a.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/__lf_gendelay_c09f7d0a.c > CMakeFiles/lab1_5.dir/__lf_gendelay_c09f7d0a.c.i
 
-CMakeFiles/lab1_5.dir/__lf_gendelay_3ed783c7.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/lab1_5.dir/__lf_gendelay_3ed783c7.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/__lf_gendelay_3ed783c7.c -o CMakeFiles/lab1_5.dir/__lf_gendelay_3ed783c7.c.s
+CMakeFiles/lab1_5.dir/__lf_gendelay_c09f7d0a.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/lab1_5.dir/__lf_gendelay_c09f7d0a.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/__lf_gendelay_c09f7d0a.c -o CMakeFiles/lab1_5.dir/__lf_gendelay_c09f7d0a.c.s
 
 CMakeFiles/lab1_5.dir/lab1_5.c.o: CMakeFiles/lab1_5.dir/flags.make
-CMakeFiles/lab1_5.dir/lab1_5.c.o: /Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/lab1_5.c
+CMakeFiles/lab1_5.dir/lab1_5.c.o: /Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/lab1_5.c
 CMakeFiles/lab1_5.dir/lab1_5.c.o: CMakeFiles/lab1_5.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/lab1_5.dir/lab1_5.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/lab1_5.dir/lab1_5.c.o -MF CMakeFiles/lab1_5.dir/lab1_5.c.o.d -o CMakeFiles/lab1_5.dir/lab1_5.c.o -c /Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/lab1_5.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/lab1_5.dir/lab1_5.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/lab1_5.dir/lab1_5.c.o -MF CMakeFiles/lab1_5.dir/lab1_5.c.o.d -o CMakeFiles/lab1_5.dir/lab1_5.c.o -c /Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/lab1_5.c
 
 CMakeFiles/lab1_5.dir/lab1_5.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/lab1_5.dir/lab1_5.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/lab1_5.c > CMakeFiles/lab1_5.dir/lab1_5.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/lab1_5.c > CMakeFiles/lab1_5.dir/lab1_5.c.i
 
 CMakeFiles/lab1_5.dir/lab1_5.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/lab1_5.dir/lab1_5.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/lab1_5.c -o CMakeFiles/lab1_5.dir/lab1_5.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/lab1_5.c -o CMakeFiles/lab1_5.dir/lab1_5.c.s
 
 # Object files for target lab1_5
 lab1_5_OBJECTS = \
@@ -174,7 +174,7 @@ lab1_5_OBJECTS = \
 "CMakeFiles/lab1_5.dir/_source.c.o" \
 "CMakeFiles/lab1_5.dir/_sink.c.o" \
 "CMakeFiles/lab1_5.dir/_stringln.c.o" \
-"CMakeFiles/lab1_5.dir/__lf_gendelay_3ed783c7.c.o" \
+"CMakeFiles/lab1_5.dir/__lf_gendelay_c09f7d0a.c.o" \
 "CMakeFiles/lab1_5.dir/lab1_5.c.o"
 
 # External object files for target lab1_5
@@ -185,13 +185,13 @@ lab1_5: CMakeFiles/lab1_5.dir/_lab1_5_main.c.o
 lab1_5: CMakeFiles/lab1_5.dir/_source.c.o
 lab1_5: CMakeFiles/lab1_5.dir/_sink.c.o
 lab1_5: CMakeFiles/lab1_5.dir/_stringln.c.o
-lab1_5: CMakeFiles/lab1_5.dir/__lf_gendelay_3ed783c7.c.o
+lab1_5: CMakeFiles/lab1_5.dir/__lf_gendelay_c09f7d0a.c.o
 lab1_5: CMakeFiles/lab1_5.dir/lab1_5.c.o
 lab1_5: CMakeFiles/lab1_5.dir/build.make
 lab1_5: /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/lib/libm.tbd
 lab1_5: core/libcore.a
 lab1_5: CMakeFiles/lab1_5.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking C executable lab1_5"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking C executable lab1_5"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/lab1_5.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -203,6 +203,6 @@ CMakeFiles/lab1_5.dir/clean:
 .PHONY : CMakeFiles/lab1_5.dir/clean
 
 CMakeFiles/lab1_5.dir/depend:
-	cd /Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5 /Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5 /Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/build /Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/build /Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/build/CMakeFiles/lab1_5.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5 /Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5 /Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/build /Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/build /Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/build/CMakeFiles/lab1_5.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/lab1_5.dir/depend
 

@@ -1,5 +1,5 @@
 core/CMakeFiles/core.dir/utils/hashset/hashset_itr.c.o: \
-  /Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/core/utils/hashset/hashset_itr.c \
+  /Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/core/utils/hashset/hashset_itr.c \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/assert.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/sys/cdefs.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/sys/_symbol_aliasing.h \
@@ -35,8 +35,8 @@ core/CMakeFiles/core.dir/utils/hashset/hashset_itr.c.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/sys/_types/_ssize_t.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/secure/_stdio.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/secure/_common.h \
-  /Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/core/../include/core/utils/hashset/hashset_itr.h \
-  /Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/core/../include/core/utils/hashset/hashset.h \
+  /Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/core/../include/core/utils/hashset/hashset_itr.h \
+  /Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/core/../include/core/utils/hashset/hashset.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/stdlib.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/sys/wait.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/sys/_types/_pid_t.h \

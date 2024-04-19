@@ -1,5 +1,5 @@
 core/CMakeFiles/core.dir/port.c.o: \
-  /Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_4/core/port.c \
+  /Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_4/core/port.c \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/stdio.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/_stdio.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/sys/cdefs.h \
@@ -34,7 +34,7 @@ core/CMakeFiles/core.dir/port.c.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/sys/_types/_ssize_t.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/secure/_stdio.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/secure/_common.h \
-  /Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_4/core/../include/core/port.h \
+  /Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_4/core/../include/core/port.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/stdlib.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/sys/wait.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/sys/_types/_pid_t.h \
@@ -76,7 +76,7 @@ core/CMakeFiles/core.dir/port.c.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/sys/_types/_dev_t.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/sys/_types/_mode_t.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/14.0.3/include/stdbool.h \
-  /Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_4/core/../include/core/lf_token.h \
-  /Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_4/core/../include/core/utils/vector.h \
+  /Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_4/core/../include/core/lf_token.h \
+  /Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_4/core/../include/core/utils/vector.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/14.0.3/include/stddef.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/14.0.3/include/__stddef_max_align_t.h

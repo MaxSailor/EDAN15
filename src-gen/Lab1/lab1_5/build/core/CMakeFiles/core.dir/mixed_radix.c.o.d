@@ -1,5 +1,5 @@
 core/CMakeFiles/core.dir/mixed_radix.c.o: \
-  /Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/core/mixed_radix.c \
+  /Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/core/mixed_radix.c \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/assert.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/sys/cdefs.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/sys/_symbol_aliasing.h \
@@ -66,4 +66,4 @@ core/CMakeFiles/core.dir/mixed_radix.c.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/malloc/_malloc.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/sys/_types/_dev_t.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/sys/_types/_mode_t.h \
-  /Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/core/../include/core/mixed_radix.h
+  /Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/core/../include/core/mixed_radix.h

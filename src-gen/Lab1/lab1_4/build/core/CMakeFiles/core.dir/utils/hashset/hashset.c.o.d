@@ -1,6 +1,6 @@
 core/CMakeFiles/core.dir/utils/hashset/hashset.c.o: \
-  /Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_4/core/utils/hashset/hashset.c \
-  /Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_4/core/../include/core/utils/hashset/hashset.h \
+  /Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_4/core/utils/hashset/hashset.c \
+  /Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_4/core/../include/core/utils/hashset/hashset.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/stdlib.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/Availability.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/AvailabilityVersions.h \

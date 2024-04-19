@@ -1,8 +1,8 @@
 #ifndef _lab1_5_main_H
 #define _lab1_5_main_H
 #ifndef _LAB1_5_MAIN_H // necessary for arduino-cli, which automatically includes headers that are not used
-#ifndef TOP_LEVEL_PREAMBLE_1399883754_H
-#define TOP_LEVEL_PREAMBLE_1399883754_H
+#ifndef TOP_LEVEL_PREAMBLE_2120221675_H
+#define TOP_LEVEL_PREAMBLE_2120221675_H
 #endif
 #ifdef __cplusplus
 extern "C" {
@@ -78,7 +78,7 @@ typedef struct {
     lf_port_internal_t _base;
     int value;
 
-} _lf_gendelay_3ed783c7_inp_t;
+} _lf_gendelay_c09f7d0a_inp_t;
 typedef struct {
     token_type_t type;
     lf_token_t* token;
@@ -87,6 +87,6 @@ typedef struct {
     lf_port_internal_t _base;
     int value;
 
-} _lf_gendelay_3ed783c7_out_t;
+} _lf_gendelay_c09f7d0a_out_t;
 #endif
 #endif

@@ -1,8 +1,8 @@
 #ifndef _source_H
 #define _source_H
 #ifndef _SOURCE_H // necessary for arduino-cli, which automatically includes headers that are not used
-#ifndef TOP_LEVEL_PREAMBLE_546501105_H
-#define TOP_LEVEL_PREAMBLE_546501105_H
+#ifndef TOP_LEVEL_PREAMBLE_1398010396_H
+#define TOP_LEVEL_PREAMBLE_1398010396_H
 #endif
 #ifdef __cplusplus
 extern "C" {
@@ -14,9 +14,6 @@ extern "C" {
 #endif
 typedef struct source_self_t{
     self_base_t base; // This field is only to be used by the runtime, not the user.
-    interval_t start;
-    interval_t incr;
-    interval_t interval;
     int end[0]; // placeholder; MSVC does not compile empty structs
 } source_self_t;
 typedef struct {

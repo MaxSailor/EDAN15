@@ -57,7 +57,7 @@ add_executable(
     _source.c
     _sink.c
     _stringln.c
-    __lf_gendelay_3ed783c7.c
+    __lf_gendelay_c09f7d0a.c
     lab1_5.c
 )
 

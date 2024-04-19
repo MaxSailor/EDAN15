@@ -1,0 +1,88 @@
+target C 
+import Output, Input from "vm_extra.lf"
+
+reactor Machine(stock:int[] = {2,2,2}){
+    preamble {=
+        enum machine_mode {
+            Idle = 0, 
+            Selected = 1, 
+            Payed = 2};
+    =}
+    input cancel:bool
+    input sel:int
+    input coin:bool
+
+    output change:bool
+    output beverage:int
+
+    state Machine_mode: int = 0;
+    state bev: int = 0;
+
+    reaction(coin, sel, cancel) -> change, beverage {=
+        switch(self -> Machine_mode) {
+            case Idle:
+                if(coin -> is_present){
+                    printf("[DEBUG] Coin detected. State: %d \n", self -> Machine_mode);
+                    self -> Machine_mode = Payed;
+                }
+                if(sel -> is_present){
+                    printf("[DEBUG] Select detected. State: %d \n", self -> Machine_mode);
+                    self -> Machine_mode = Selected;
+                    self -> bev = sel -> value;
+                }
+                if(cancel -> is_present){
+                    printf("[DEBUG] Cancel detected. State: %d \n", self -> Machine_mode);
+                    self -> Machine_mode = Idle;
+                }
+                break;
+            case Selected:
+                if(coin -> is_present){
+                    printf("[DEBUG] Coin detected. State: %d \n", self -> Machine_mode);
+                    self -> Machine_mode = Idle;
+                    lf_set(beverage, self -> bev);
+                }
+                if(sel -> is_present){
+                    printf("[DEBUG] Select detected. State: %d \n", self -> Machine_mode);
+                    self -> Machine_mode = Selected;
+                    self -> bev = sel -> value;
+                }
+                if(cancel -> is_present){
+                    printf("[DEBUG] Cancel detected. State: %d \n", self -> Machine_mode);
+                    self -> bev = 0;
+                    self -> Machine_mode = Idle;
+                }
+                break;
+            case Payed:
+                if(coin -> is_present){
+                    printf("[DEBUG] Coin detected. State: %d \n", self -> Machine_mode);
+                    self -> Machine_mode = Payed;
+                    lf_set(change, true);
+                }
+                if(sel -> is_present){
+                    printf("[DEBUG] Select detected. State: %d \n", self -> Machine_mode);
+                    self -> Machine_mode = Idle;
+                    lf_set(beverage, sel -> value);
+                }
+                if(cancel -> is_present){
+                    printf("[DEBUG] Cancel detected. State: %d \n", self -> Machine_mode);
+                    self -> Machine_mode = Idle;
+                    lf_set(change, true);
+                }
+                break;
+        }
+        
+    =}
+
+}
+
+main reactor{
+    Input = new Input()
+    Output = new Output()
+    Machine = new Machine()
+    
+    Input.cancel -> Machine.cancel
+    Input.sel -> Machine.sel
+    Input.coin -> Machine.coin
+    Machine.change -> Output.change
+    Machine.beverage -> Output.beverage
+}

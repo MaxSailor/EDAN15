@@ -1,8 +1,8 @@
-# Install script for directory: /Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/core
+# Install script for directory: /Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/core
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/Users/sailor/Developer/EDAN15")
+  set(CMAKE_INSTALL_PREFIX "/Users/sailor/Developer/git/EDAN15")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

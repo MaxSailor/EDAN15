@@ -1,5 +1,5 @@
 core/CMakeFiles/core.dir/platform/lf_unix_syscall_support.c.o: \
-  /Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/core/platform/lf_unix_syscall_support.c \
+  /Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/core/platform/lf_unix_syscall_support.c \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/unistd.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/_types.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/sys/_types.h \

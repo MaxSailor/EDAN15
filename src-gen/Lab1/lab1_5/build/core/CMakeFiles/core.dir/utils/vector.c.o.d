@@ -1,5 +1,5 @@
 core/CMakeFiles/core.dir/utils/vector.c.o: \
-  /Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/core/utils/vector.c \
+  /Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/core/utils/vector.c \
   /Library/Developer/CommandLineTools/usr/lib/clang/14.0.3/include/stddef.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/14.0.3/include/__stddef_max_align_t.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/stdlib.h \
@@ -68,4 +68,4 @@ core/CMakeFiles/core.dir/utils/vector.c.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/sys/_types/_dev_t.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/sys/_types/_mode_t.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/assert.h \
-  /Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/core/../include/core/utils/vector.h
+  /Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/core/../include/core/utils/vector.h

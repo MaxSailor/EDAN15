@@ -3,9 +3,9 @@
 #include "include/lab1_5/Stringln.h"
 #include "_stringln.h"
 // *********** From the preamble, verbatim:
-#line 33 "/Users/sailor/Developer/EDAN15/Lab1/lab1_5.lf"
+#line 33 "/Users/sailor/Developer/git/EDAN15/Lab1/lab1_5.lf"
 #include <string.h>
-#line 9 "/Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/_stringln.c"
+#line 9 "/Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/_stringln.c"
 
 // *********** End of preamble.
 // ***** Start of method declarations.
@@ -16,12 +16,12 @@ void _stringlnreaction_function_0(void* instance_args) {
     _stringln_in_t* in = self->_lf_in;
     int in_width = self->_lf_in_width; SUPPRESS_UNUSED_WARNING(in_width);
     _stringln_out_t* out = &self->_lf_out;
-    #line 43 "/Users/sailor/Developer/EDAN15/Lab1/lab1_5.lf"
+    #line 43 "/Users/sailor/Developer/git/EDAN15/Lab1/lab1_5.lf"
     //printf("%s \n", in -> value);
     
     lf_set(out, strlen(in->value));
     self -> total += strlen(in->value);
-#line 25 "/Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/_stringln.c"
+#line 25 "/Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/_stringln.c"
 }
 #include "include/api/set_undef.h"
 #include "include/api/set.h"
@@ -30,18 +30,18 @@ void _stringlnreaction_function_1(void* instance_args) {
     _stringln_in_int_t* in_int = self->_lf_in_int;
     int in_int_width = self->_lf_in_int_width; SUPPRESS_UNUSED_WARNING(in_int_width);
     _stringln_out_int_t* out_int = &self->_lf_out_int;
-    #line 50 "/Users/sailor/Developer/EDAN15/Lab1/lab1_5.lf"
+    #line 50 "/Users/sailor/Developer/git/EDAN15/Lab1/lab1_5.lf"
     lf_set(out_int, in_int -> value);
-#line 36 "/Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/_stringln.c"
+#line 36 "/Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/_stringln.c"
 }
 #include "include/api/set_undef.h"
 #include "include/api/set.h"
 void _stringlnreaction_function_2(void* instance_args) {
     _stringln_self_t* self = (_stringln_self_t*)instance_args; SUPPRESS_UNUSED_WARNING(self);
     
-    #line 54 "/Users/sailor/Developer/EDAN15/Lab1/lab1_5.lf"
+    #line 54 "/Users/sailor/Developer/git/EDAN15/Lab1/lab1_5.lf"
     printf("%d \n", self -> total);
-#line 45 "/Users/sailor/Developer/EDAN15/src-gen/Lab1/lab1_5/_stringln.c"
+#line 45 "/Users/sailor/Developer/git/EDAN15/src-gen/Lab1/lab1_5/_stringln.c"
 }
 #include "include/api/set_undef.h"
 _stringln_self_t* new__stringln() {
