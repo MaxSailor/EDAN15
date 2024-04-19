@@ -153,10 +153,24 @@ CMakeFiles/Vending_Machine.dir/_display.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Vending_Machine.dir/_display.c.s"
 	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/sailor/Developer/git/EDAN15/src-gen/Lab3/Vending_Machine/_display.c -o CMakeFiles/Vending_Machine.dir/_display.c.s
 
+CMakeFiles/Vending_Machine.dir/__lf_gendelay_7d472d68.c.o: CMakeFiles/Vending_Machine.dir/flags.make
+CMakeFiles/Vending_Machine.dir/__lf_gendelay_7d472d68.c.o: /Users/sailor/Developer/git/EDAN15/src-gen/Lab3/Vending_Machine/__lf_gendelay_7d472d68.c
+CMakeFiles/Vending_Machine.dir/__lf_gendelay_7d472d68.c.o: CMakeFiles/Vending_Machine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/sailor/Developer/git/EDAN15/src-gen/Lab3/Vending_Machine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/Vending_Machine.dir/__lf_gendelay_7d472d68.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Vending_Machine.dir/__lf_gendelay_7d472d68.c.o -MF CMakeFiles/Vending_Machine.dir/__lf_gendelay_7d472d68.c.o.d -o CMakeFiles/Vending_Machine.dir/__lf_gendelay_7d472d68.c.o -c /Users/sailor/Developer/git/EDAN15/src-gen/Lab3/Vending_Machine/__lf_gendelay_7d472d68.c
+
+CMakeFiles/Vending_Machine.dir/__lf_gendelay_7d472d68.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Vending_Machine.dir/__lf_gendelay_7d472d68.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/sailor/Developer/git/EDAN15/src-gen/Lab3/Vending_Machine/__lf_gendelay_7d472d68.c > CMakeFiles/Vending_Machine.dir/__lf_gendelay_7d472d68.c.i
+
+CMakeFiles/Vending_Machine.dir/__lf_gendelay_7d472d68.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Vending_Machine.dir/__lf_gendelay_7d472d68.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/sailor/Developer/git/EDAN15/src-gen/Lab3/Vending_Machine/__lf_gendelay_7d472d68.c -o CMakeFiles/Vending_Machine.dir/__lf_gendelay_7d472d68.c.s
+
 CMakeFiles/Vending_Machine.dir/Vending_Machine.c.o: CMakeFiles/Vending_Machine.dir/flags.make
 CMakeFiles/Vending_Machine.dir/Vending_Machine.c.o: /Users/sailor/Developer/git/EDAN15/src-gen/Lab3/Vending_Machine/Vending_Machine.c
 CMakeFiles/Vending_Machine.dir/Vending_Machine.c.o: CMakeFiles/Vending_Machine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/sailor/Developer/git/EDAN15/src-gen/Lab3/Vending_Machine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/Vending_Machine.dir/Vending_Machine.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/sailor/Developer/git/EDAN15/src-gen/Lab3/Vending_Machine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/Vending_Machine.dir/Vending_Machine.c.o"
 	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Vending_Machine.dir/Vending_Machine.c.o -MF CMakeFiles/Vending_Machine.dir/Vending_Machine.c.o.d -o CMakeFiles/Vending_Machine.dir/Vending_Machine.c.o -c /Users/sailor/Developer/git/EDAN15/src-gen/Lab3/Vending_Machine/Vending_Machine.c
 
 CMakeFiles/Vending_Machine.dir/Vending_Machine.c.i: cmake_force
@@ -175,6 +189,7 @@ Vending_Machine_OBJECTS = \
 "CMakeFiles/Vending_Machine.dir/_output.c.o" \
 "CMakeFiles/Vending_Machine.dir/_machine.c.o" \
 "CMakeFiles/Vending_Machine.dir/_display.c.o" \
+"CMakeFiles/Vending_Machine.dir/__lf_gendelay_7d472d68.c.o" \
 "CMakeFiles/Vending_Machine.dir/Vending_Machine.c.o"
 
 # External object files for target Vending_Machine
@@ -186,12 +201,13 @@ Vending_Machine: CMakeFiles/Vending_Machine.dir/_input.c.o
 Vending_Machine: CMakeFiles/Vending_Machine.dir/_output.c.o
 Vending_Machine: CMakeFiles/Vending_Machine.dir/_machine.c.o
 Vending_Machine: CMakeFiles/Vending_Machine.dir/_display.c.o
+Vending_Machine: CMakeFiles/Vending_Machine.dir/__lf_gendelay_7d472d68.c.o
 Vending_Machine: CMakeFiles/Vending_Machine.dir/Vending_Machine.c.o
 Vending_Machine: CMakeFiles/Vending_Machine.dir/build.make
 Vending_Machine: /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/lib/libm.tbd
 Vending_Machine: core/libcore.a
 Vending_Machine: CMakeFiles/Vending_Machine.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/sailor/Developer/git/EDAN15/src-gen/Lab3/Vending_Machine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking C executable Vending_Machine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/sailor/Developer/git/EDAN15/src-gen/Lab3/Vending_Machine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking C executable Vending_Machine"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Vending_Machine.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

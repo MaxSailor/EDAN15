@@ -25,6 +25,7 @@ void _lf_set_default_command_line_options() {
 #include "_output.h"
 #include "_machine.h"
 #include "_display.h"
+#include "__lf_gendelay_7d472d68.h"
 #include "_vending_machine_main.h"
 typedef enum {
     vending_machine_main,
@@ -34,7 +35,7 @@ typedef enum {
 environment_t envs[_num_enclaves];
 // 'Create' and initialize the environments in the program
 void _lf_create_environments() {
-    environment_init(&envs[vending_machine_main],"Vending_Machine",vending_machine_main,_lf_number_of_workers,0,1,0,0,8,0,0,NULL);
+    environment_init(&envs[vending_machine_main],"Vending_Machine",vending_machine_main,_lf_number_of_workers,1,1,0,0,11,1,0,NULL);
 }
 // Update the pointer argument to point to the beginning of the environment array
 // and return the size of that array
@@ -67,6 +68,8 @@ void _lf_initialize_trigger_objects() {
     SUPPRESS_UNUSED_WARNING(vending_machine_machine_self);
     _display_self_t* vending_machine_display_self[1];
     SUPPRESS_UNUSED_WARNING(vending_machine_display_self);
+    __lf_gendelay_7d472d68_self_t* vending_machine_delay_self[1];
+    SUPPRESS_UNUSED_WARNING(vending_machine_delay_self);
     // ***** Start initializing Vending_Machine of class Vending_Machine
     vending_machine_main_self[0] = new__vending_machine_main();
     vending_machine_main_self[0]->base.environment = &envs[vending_machine_main];
@@ -140,6 +143,8 @@ void _lf_initialize_trigger_objects() {
         vending_machine_machine_self[0]->_lf_sel_width = -2;
         // width of -2 indicates that it is not a multiport.
         vending_machine_machine_self[0]->_lf_coin_width = -2;
+        // width of -2 indicates that it is not a multiport.
+        vending_machine_machine_self[0]->_lf_display_off_width = -2;
         SUPPRESS_UNUSED_WARNING(_lf_watchdog_count);
         { // For scoping
             static int _initial = 0;
@@ -149,8 +154,25 @@ void _lf_initialize_trigger_objects() {
             static int _initial = 0;
             vending_machine_machine_self[0]->bev = _initial;
         } // End scoping.
-    
+        { // For scoping
+            static bool _initial = true;
+            vending_machine_machine_self[0]->display_on = _initial;
+        } // End scoping.
+        // Initializing action Vending_Machine.Machine.a
+        vending_machine_machine_self[0]->_lf__a.offset = 0;
+        vending_machine_machine_self[0]->_lf__a.period = -1;
+        vending_machine_machine_self[0]->_lf__a.last_tag = NEVER_TAG;
+        vending_machine_machine_self[0]->_lf__a.mode = NULL;
+        _lf_initialize_template((token_template_t*)
+                &(vending_machine_machine_self[0]->_lf__a),
+        0);
+        vending_machine_machine_self[0]->_lf__a.status = absent;
         vending_machine_machine_self[0]->_lf__reaction_0.deadline = NEVER;
+        vending_machine_machine_self[0]->_lf__reaction_1.deadline = NEVER;
+        vending_machine_machine_self[0]->_lf__reaction_2.deadline = NEVER;
+        vending_machine_machine_self[0]->_lf__reaction_3.deadline = NEVER;
+        // Register for transition handling
+        envs[vending_machine_main].modes->modal_reactor_states[modal_reactor_count[vending_machine_main]++] = &((self_base_t*)vending_machine_machine_self[0])->_lf__mode_state;
         //***** End initializing Vending_Machine.Machine
     }
     {
@@ -160,20 +182,53 @@ void _lf_initialize_trigger_objects() {
         vending_machine_display_self[0]->base.environment = &envs[vending_machine_main];
         bank_index = 0; SUPPRESS_UNUSED_WARNING(bank_index);
         // width of -2 indicates that it is not a multiport.
+        vending_machine_display_self[0]->_lf_display_off_width = -2;
+        // width of -2 indicates that it is not a multiport.
         vending_machine_display_self[0]->_lf_text_width = -2;
         SUPPRESS_UNUSED_WARNING(_lf_watchdog_count);
-        // Initializing action Vending_Machine.Display.a
-        vending_machine_display_self[0]->_lf__a.offset = 0;
-        vending_machine_display_self[0]->_lf__a.period = -1;
-        vending_machine_display_self[0]->_lf__a.last_tag = NEVER_TAG;
-        vending_machine_display_self[0]->_lf__a.mode = NULL;
-        _lf_initialize_template((token_template_t*)
-                &(vending_machine_display_self[0]->_lf__a),
-        0);
-        vending_machine_display_self[0]->_lf__a.status = absent;
+        { // For scoping
+            static int _initial = 0;
+            vending_machine_display_self[0]->count = _initial;
+        } // End scoping.
+        { // For scoping
+            static bool _initial = false;
+            vending_machine_display_self[0]->display_on = _initial;
+        } // End scoping.
+        // Initiaizing timer Vending_Machine.Display.t.
+        vending_machine_display_self[0]->_lf__t.offset = 0;
+        vending_machine_display_self[0]->_lf__t.period = MSEC(100);
+        // Associate timer with the environment of its parent
+        envs[vending_machine_main].timer_triggers[timer_triggers_count[vending_machine_main]++] = &vending_machine_display_self[0]->_lf__t;
+        vending_machine_display_self[0]->_lf__t.mode = NULL;
+    
         vending_machine_display_self[0]->_lf__reaction_0.deadline = NEVER;
         vending_machine_display_self[0]->_lf__reaction_1.deadline = NEVER;
         //***** End initializing Vending_Machine.Display
+    }
+    {
+        _vending_machine_main_main_self_t *self = vending_machine_main_self[0];
+        // ***** Start initializing Vending_Machine.delay of class _lf_GenDelay_7d472d68
+        vending_machine_delay_self[0] = new___lf_gendelay_7d472d68();
+        vending_machine_delay_self[0]->base.environment = &envs[vending_machine_main];
+        bank_index = 0; SUPPRESS_UNUSED_WARNING(bank_index);
+        vending_machine_delay_self[0]->delay = 0;
+        // width of -2 indicates that it is not a multiport.
+        vending_machine_delay_self[0]->_lf_out_width = -2;
+        // width of -2 indicates that it is not a multiport.
+        vending_machine_delay_self[0]->_lf_inp_width = -2;
+        SUPPRESS_UNUSED_WARNING(_lf_watchdog_count);
+        // Initializing action Vending_Machine.delay.act
+        vending_machine_delay_self[0]->_lf__act.offset = 0;
+        vending_machine_delay_self[0]->_lf__act.period = -1;
+        vending_machine_delay_self[0]->_lf__act.last_tag = NEVER_TAG;
+        vending_machine_delay_self[0]->_lf__act.mode = NULL;
+        _lf_initialize_template((token_template_t*)
+                &(vending_machine_delay_self[0]->_lf__act),
+        sizeof(int));
+        vending_machine_delay_self[0]->_lf__act.status = absent;
+        vending_machine_delay_self[0]->_lf__reaction_0.deadline = NEVER;
+        vending_machine_delay_self[0]->_lf__reaction_1.deadline = NEVER;
+        //***** End initializing Vending_Machine.delay
     }
     //***** End initializing Vending_Machine
     // **** Start deferred initialize for Vending_Machine
@@ -250,32 +305,98 @@ void _lf_initialize_trigger_objects() {
         
             // Total number of outputs (single ports and multiport channels)
             // produced by reaction_1 of Vending_Machine.Machine.
-            vending_machine_machine_self[0]->_lf__reaction_0.num_outputs = 3;
+            vending_machine_machine_self[0]->_lf__reaction_0.num_outputs = 1;
             // Allocate memory for triggers[] and triggered_sizes[] on the reaction_t
             // struct for this reaction.
             vending_machine_machine_self[0]->_lf__reaction_0.triggers = (trigger_t***)_lf_allocate(
-                    3, sizeof(trigger_t**),
+                    1, sizeof(trigger_t**),
                     &vending_machine_machine_self[0]->base.allocations);
             vending_machine_machine_self[0]->_lf__reaction_0.triggered_sizes = (int*)_lf_allocate(
-                    3, sizeof(int),
+                    1, sizeof(int),
                     &vending_machine_machine_self[0]->base.allocations);
             vending_machine_machine_self[0]->_lf__reaction_0.output_produced = (bool**)_lf_allocate(
-                    3, sizeof(bool*),
+                    1, sizeof(bool*),
                     &vending_machine_machine_self[0]->base.allocations);
             {
                 int count = 0; SUPPRESS_UNUSED_WARNING(count);
-                {
-                    vending_machine_machine_self[0]->_lf__reaction_0.output_produced[count++] = &vending_machine_machine_self[0]->_lf_change.is_present;
-                }
-                {
-                    vending_machine_machine_self[0]->_lf__reaction_0.output_produced[count++] = &vending_machine_machine_self[0]->_lf_beverage.is_present;
-                }
                 {
                     vending_machine_machine_self[0]->_lf__reaction_0.output_produced[count++] = &vending_machine_machine_self[0]->_lf_text.is_present;
                 }
             }
             
             // ** End initialization for reaction 0 of Vending_Machine.Machine
+            // Total number of outputs (single ports and multiport channels)
+            // produced by reaction_2 of Vending_Machine.Machine.
+            vending_machine_machine_self[0]->_lf__reaction_1.num_outputs = 3;
+            // Allocate memory for triggers[] and triggered_sizes[] on the reaction_t
+            // struct for this reaction.
+            vending_machine_machine_self[0]->_lf__reaction_1.triggers = (trigger_t***)_lf_allocate(
+                    3, sizeof(trigger_t**),
+                    &vending_machine_machine_self[0]->base.allocations);
+            vending_machine_machine_self[0]->_lf__reaction_1.triggered_sizes = (int*)_lf_allocate(
+                    3, sizeof(int),
+                    &vending_machine_machine_self[0]->base.allocations);
+            vending_machine_machine_self[0]->_lf__reaction_1.output_produced = (bool**)_lf_allocate(
+                    3, sizeof(bool*),
+                    &vending_machine_machine_self[0]->base.allocations);
+            {
+                int count = 0; SUPPRESS_UNUSED_WARNING(count);
+                {
+                    vending_machine_machine_self[0]->_lf__reaction_1.output_produced[count++] = &vending_machine_machine_self[0]->_lf_change.is_present;
+                }
+                {
+                    vending_machine_machine_self[0]->_lf__reaction_1.output_produced[count++] = &vending_machine_machine_self[0]->_lf_beverage.is_present;
+                }
+                {
+                    vending_machine_machine_self[0]->_lf__reaction_1.output_produced[count++] = &vending_machine_machine_self[0]->_lf_text.is_present;
+                }
+            }
+            
+            // ** End initialization for reaction 1 of Vending_Machine.Machine
+            // Total number of outputs (single ports and multiport channels)
+            // produced by reaction_3 of Vending_Machine.Machine.
+            vending_machine_machine_self[0]->_lf__reaction_2.num_outputs = 1;
+            // Allocate memory for triggers[] and triggered_sizes[] on the reaction_t
+            // struct for this reaction.
+            vending_machine_machine_self[0]->_lf__reaction_2.triggers = (trigger_t***)_lf_allocate(
+                    1, sizeof(trigger_t**),
+                    &vending_machine_machine_self[0]->base.allocations);
+            vending_machine_machine_self[0]->_lf__reaction_2.triggered_sizes = (int*)_lf_allocate(
+                    1, sizeof(int),
+                    &vending_machine_machine_self[0]->base.allocations);
+            vending_machine_machine_self[0]->_lf__reaction_2.output_produced = (bool**)_lf_allocate(
+                    1, sizeof(bool*),
+                    &vending_machine_machine_self[0]->base.allocations);
+            {
+                int count = 0; SUPPRESS_UNUSED_WARNING(count);
+                {
+                    vending_machine_machine_self[0]->_lf__reaction_2.output_produced[count++] = &vending_machine_machine_self[0]->_lf_change.is_present;
+                }
+            }
+            
+            // ** End initialization for reaction 2 of Vending_Machine.Machine
+            // Total number of outputs (single ports and multiport channels)
+            // produced by reaction_4 of Vending_Machine.Machine.
+            vending_machine_machine_self[0]->_lf__reaction_3.num_outputs = 1;
+            // Allocate memory for triggers[] and triggered_sizes[] on the reaction_t
+            // struct for this reaction.
+            vending_machine_machine_self[0]->_lf__reaction_3.triggers = (trigger_t***)_lf_allocate(
+                    1, sizeof(trigger_t**),
+                    &vending_machine_machine_self[0]->base.allocations);
+            vending_machine_machine_self[0]->_lf__reaction_3.triggered_sizes = (int*)_lf_allocate(
+                    1, sizeof(int),
+                    &vending_machine_machine_self[0]->base.allocations);
+            vending_machine_machine_self[0]->_lf__reaction_3.output_produced = (bool**)_lf_allocate(
+                    1, sizeof(bool*),
+                    &vending_machine_machine_self[0]->base.allocations);
+            {
+                int count = 0; SUPPRESS_UNUSED_WARNING(count);
+                {
+                    vending_machine_machine_self[0]->_lf__reaction_3.output_produced[count++] = &vending_machine_machine_self[0]->_lf_text.is_present;
+                }
+            }
+            
+            // ** End initialization for reaction 3 of Vending_Machine.Machine
         
         }
         // **** End of deferred initialize for Vending_Machine.Machine
@@ -292,15 +413,65 @@ void _lf_initialize_trigger_objects() {
             // ** End initialization for reaction 0 of Vending_Machine.Display
             // Total number of outputs (single ports and multiport channels)
             // produced by reaction_2 of Vending_Machine.Display.
-            vending_machine_display_self[0]->_lf__reaction_1.num_outputs = 0;
+            vending_machine_display_self[0]->_lf__reaction_1.num_outputs = 1;
+            // Allocate memory for triggers[] and triggered_sizes[] on the reaction_t
+            // struct for this reaction.
+            vending_machine_display_self[0]->_lf__reaction_1.triggers = (trigger_t***)_lf_allocate(
+                    1, sizeof(trigger_t**),
+                    &vending_machine_display_self[0]->base.allocations);
+            vending_machine_display_self[0]->_lf__reaction_1.triggered_sizes = (int*)_lf_allocate(
+                    1, sizeof(int),
+                    &vending_machine_display_self[0]->base.allocations);
+            vending_machine_display_self[0]->_lf__reaction_1.output_produced = (bool**)_lf_allocate(
+                    1, sizeof(bool*),
+                    &vending_machine_display_self[0]->base.allocations);
             {
                 int count = 0; SUPPRESS_UNUSED_WARNING(count);
+                {
+                    vending_machine_display_self[0]->_lf__reaction_1.output_produced[count++] = &vending_machine_display_self[0]->_lf_display_off.is_present;
+                }
             }
             
             // ** End initialization for reaction 1 of Vending_Machine.Display
         
         }
         // **** End of deferred initialize for Vending_Machine.Display
+        // **** Start deferred initialize for Vending_Machine.delay
+        {
+        
+            // Total number of outputs (single ports and multiport channels)
+            // produced by reaction_1 of Vending_Machine.delay.
+            vending_machine_delay_self[0]->_lf__reaction_0.num_outputs = 1;
+            // Allocate memory for triggers[] and triggered_sizes[] on the reaction_t
+            // struct for this reaction.
+            vending_machine_delay_self[0]->_lf__reaction_0.triggers = (trigger_t***)_lf_allocate(
+                    1, sizeof(trigger_t**),
+                    &vending_machine_delay_self[0]->base.allocations);
+            vending_machine_delay_self[0]->_lf__reaction_0.triggered_sizes = (int*)_lf_allocate(
+                    1, sizeof(int),
+                    &vending_machine_delay_self[0]->base.allocations);
+            vending_machine_delay_self[0]->_lf__reaction_0.output_produced = (bool**)_lf_allocate(
+                    1, sizeof(bool*),
+                    &vending_machine_delay_self[0]->base.allocations);
+            {
+                int count = 0; SUPPRESS_UNUSED_WARNING(count);
+                {
+                    vending_machine_delay_self[0]->_lf__reaction_0.output_produced[count++] = &vending_machine_delay_self[0]->_lf_out.is_present;
+                }
+            }
+            
+            // ** End initialization for reaction 0 of Vending_Machine.delay
+            // Total number of outputs (single ports and multiport channels)
+            // produced by reaction_2 of Vending_Machine.delay.
+            vending_machine_delay_self[0]->_lf__reaction_1.num_outputs = 0;
+            {
+                int count = 0; SUPPRESS_UNUSED_WARNING(count);
+            }
+            
+            // ** End initialization for reaction 1 of Vending_Machine.delay
+        
+        }
+        // **** End of deferred initialize for Vending_Machine.delay
     }
     // **** End of deferred initialize for Vending_Machine
     // **** Start non-nested deferred initialize for Vending_Machine
@@ -495,38 +666,6 @@ void _lf_initialize_trigger_objects() {
             }
             {
                 int triggers_index[1] = { 0 }; // Number of bank members with the reaction.
-                // Iterate over range Vending_Machine.Machine.change(0,1)->[Vending_Machine.Output.change(0,1)].
-                {
-                    int src_runtime = 0; SUPPRESS_UNUSED_WARNING(src_runtime); // Runtime index.
-                    int src_channel = 0; SUPPRESS_UNUSED_WARNING(src_channel); // Channel index.
-                    int src_bank = 0; SUPPRESS_UNUSED_WARNING(src_bank); // Bank index.
-                    int range_count = 0; SUPPRESS_UNUSED_WARNING(range_count);
-                    // Reaction 0 of Vending_Machine.Machine triggers 1 downstream reactions
-                    // through port Vending_Machine.Machine.change.
-                    vending_machine_machine_self[src_runtime]->_lf__reaction_0.triggered_sizes[triggers_index[src_runtime]] = 1;
-                    // For reaction 0 of Vending_Machine.Machine, allocate an
-                    // array of trigger pointers for downstream reactions through port Vending_Machine.Machine.change
-                    trigger_t** trigger_array = (trigger_t**)_lf_allocate(
-                            1, sizeof(trigger_t*),
-                            &vending_machine_machine_self[src_runtime]->base.allocations); 
-                    vending_machine_machine_self[src_runtime]->_lf__reaction_0.triggers[triggers_index[src_runtime]++] = trigger_array;
-                }
-                // Iterate over range Vending_Machine.Machine.beverage(0,1)->[Vending_Machine.Output.beverage(0,1)].
-                {
-                    int src_runtime = 0; SUPPRESS_UNUSED_WARNING(src_runtime); // Runtime index.
-                    int src_channel = 0; SUPPRESS_UNUSED_WARNING(src_channel); // Channel index.
-                    int src_bank = 0; SUPPRESS_UNUSED_WARNING(src_bank); // Bank index.
-                    int range_count = 0; SUPPRESS_UNUSED_WARNING(range_count);
-                    // Reaction 0 of Vending_Machine.Machine triggers 1 downstream reactions
-                    // through port Vending_Machine.Machine.beverage.
-                    vending_machine_machine_self[src_runtime]->_lf__reaction_0.triggered_sizes[triggers_index[src_runtime]] = 1;
-                    // For reaction 0 of Vending_Machine.Machine, allocate an
-                    // array of trigger pointers for downstream reactions through port Vending_Machine.Machine.beverage
-                    trigger_t** trigger_array = (trigger_t**)_lf_allocate(
-                            1, sizeof(trigger_t*),
-                            &vending_machine_machine_self[src_runtime]->base.allocations); 
-                    vending_machine_machine_self[src_runtime]->_lf__reaction_0.triggers[triggers_index[src_runtime]++] = trigger_array;
-                }
                 // Iterate over range Vending_Machine.Machine.text(0,1)->[Vending_Machine.Display.text(0,1)].
                 {
                     int src_runtime = 0; SUPPRESS_UNUSED_WARNING(src_runtime); // Runtime index.
@@ -544,44 +683,6 @@ void _lf_initialize_trigger_objects() {
                     vending_machine_machine_self[src_runtime]->_lf__reaction_0.triggers[triggers_index[src_runtime]++] = trigger_array;
                 }
                 for (int i = 0; i < 1; i++) triggers_index[i] = 0;
-                // Iterate over ranges Vending_Machine.Machine.change(0,1)->[Vending_Machine.Output.change(0,1)] and Vending_Machine.Output.change(0,1).
-                {
-                    int src_runtime = 0; // Runtime index.
-                    SUPPRESS_UNUSED_WARNING(src_runtime);
-                    int src_channel = 0; // Channel index.
-                    SUPPRESS_UNUSED_WARNING(src_channel);
-                    int src_bank = 0; // Bank index.
-                    SUPPRESS_UNUSED_WARNING(src_bank);
-                    // Iterate over range Vending_Machine.Output.change(0,1).
-                    {
-                        int dst_runtime = 0; SUPPRESS_UNUSED_WARNING(dst_runtime); // Runtime index.
-                        int dst_channel = 0; SUPPRESS_UNUSED_WARNING(dst_channel); // Channel index.
-                        int dst_bank = 0; SUPPRESS_UNUSED_WARNING(dst_bank); // Bank index.
-                        int range_count = 0; SUPPRESS_UNUSED_WARNING(range_count);
-                        // Point to destination port Vending_Machine.Output.change's trigger struct.
-                        vending_machine_machine_self[src_runtime]->_lf__reaction_0.triggers[triggers_index[src_runtime] + src_channel][0] = &vending_machine_output_self[dst_runtime]->_lf__change;
-                    }
-                }
-                for (int i = 0; i < 1; i++) triggers_index[i] = 1;
-                // Iterate over ranges Vending_Machine.Machine.beverage(0,1)->[Vending_Machine.Output.beverage(0,1)] and Vending_Machine.Output.beverage(0,1).
-                {
-                    int src_runtime = 0; // Runtime index.
-                    SUPPRESS_UNUSED_WARNING(src_runtime);
-                    int src_channel = 0; // Channel index.
-                    SUPPRESS_UNUSED_WARNING(src_channel);
-                    int src_bank = 0; // Bank index.
-                    SUPPRESS_UNUSED_WARNING(src_bank);
-                    // Iterate over range Vending_Machine.Output.beverage(0,1).
-                    {
-                        int dst_runtime = 0; SUPPRESS_UNUSED_WARNING(dst_runtime); // Runtime index.
-                        int dst_channel = 0; SUPPRESS_UNUSED_WARNING(dst_channel); // Channel index.
-                        int dst_bank = 0; SUPPRESS_UNUSED_WARNING(dst_bank); // Bank index.
-                        int range_count = 0; SUPPRESS_UNUSED_WARNING(range_count);
-                        // Point to destination port Vending_Machine.Output.beverage's trigger struct.
-                        vending_machine_machine_self[src_runtime]->_lf__reaction_0.triggers[triggers_index[src_runtime] + src_channel][0] = &vending_machine_output_self[dst_runtime]->_lf__beverage;
-                    }
-                }
-                for (int i = 0; i < 1; i++) triggers_index[i] = 2;
                 // Iterate over ranges Vending_Machine.Machine.text(0,1)->[Vending_Machine.Display.text(0,1)] and Vending_Machine.Display.text(0,1).
                 {
                     int src_runtime = 0; // Runtime index.
@@ -601,17 +702,301 @@ void _lf_initialize_trigger_objects() {
                     }
                 }
             }
+            {
+                int triggers_index[1] = { 0 }; // Number of bank members with the reaction.
+                // Iterate over range Vending_Machine.Machine.change(0,1)->[Vending_Machine.Output.change(0,1)].
+                {
+                    int src_runtime = 0; SUPPRESS_UNUSED_WARNING(src_runtime); // Runtime index.
+                    int src_channel = 0; SUPPRESS_UNUSED_WARNING(src_channel); // Channel index.
+                    int src_bank = 0; SUPPRESS_UNUSED_WARNING(src_bank); // Bank index.
+                    int range_count = 0; SUPPRESS_UNUSED_WARNING(range_count);
+                    // Reaction 1 of Vending_Machine.Machine triggers 1 downstream reactions
+                    // through port Vending_Machine.Machine.change.
+                    vending_machine_machine_self[src_runtime]->_lf__reaction_1.triggered_sizes[triggers_index[src_runtime]] = 1;
+                    // For reaction 1 of Vending_Machine.Machine, allocate an
+                    // array of trigger pointers for downstream reactions through port Vending_Machine.Machine.change
+                    trigger_t** trigger_array = (trigger_t**)_lf_allocate(
+                            1, sizeof(trigger_t*),
+                            &vending_machine_machine_self[src_runtime]->base.allocations); 
+                    vending_machine_machine_self[src_runtime]->_lf__reaction_1.triggers[triggers_index[src_runtime]++] = trigger_array;
+                }
+                // Iterate over range Vending_Machine.Machine.beverage(0,1)->[Vending_Machine.Output.beverage(0,1)].
+                {
+                    int src_runtime = 0; SUPPRESS_UNUSED_WARNING(src_runtime); // Runtime index.
+                    int src_channel = 0; SUPPRESS_UNUSED_WARNING(src_channel); // Channel index.
+                    int src_bank = 0; SUPPRESS_UNUSED_WARNING(src_bank); // Bank index.
+                    int range_count = 0; SUPPRESS_UNUSED_WARNING(range_count);
+                    // Reaction 1 of Vending_Machine.Machine triggers 1 downstream reactions
+                    // through port Vending_Machine.Machine.beverage.
+                    vending_machine_machine_self[src_runtime]->_lf__reaction_1.triggered_sizes[triggers_index[src_runtime]] = 1;
+                    // For reaction 1 of Vending_Machine.Machine, allocate an
+                    // array of trigger pointers for downstream reactions through port Vending_Machine.Machine.beverage
+                    trigger_t** trigger_array = (trigger_t**)_lf_allocate(
+                            1, sizeof(trigger_t*),
+                            &vending_machine_machine_self[src_runtime]->base.allocations); 
+                    vending_machine_machine_self[src_runtime]->_lf__reaction_1.triggers[triggers_index[src_runtime]++] = trigger_array;
+                }
+                // Iterate over range Vending_Machine.Machine.text(0,1)->[Vending_Machine.Display.text(0,1)].
+                {
+                    int src_runtime = 0; SUPPRESS_UNUSED_WARNING(src_runtime); // Runtime index.
+                    int src_channel = 0; SUPPRESS_UNUSED_WARNING(src_channel); // Channel index.
+                    int src_bank = 0; SUPPRESS_UNUSED_WARNING(src_bank); // Bank index.
+                    int range_count = 0; SUPPRESS_UNUSED_WARNING(range_count);
+                    // Reaction 1 of Vending_Machine.Machine triggers 1 downstream reactions
+                    // through port Vending_Machine.Machine.text.
+                    vending_machine_machine_self[src_runtime]->_lf__reaction_1.triggered_sizes[triggers_index[src_runtime]] = 1;
+                    // For reaction 1 of Vending_Machine.Machine, allocate an
+                    // array of trigger pointers for downstream reactions through port Vending_Machine.Machine.text
+                    trigger_t** trigger_array = (trigger_t**)_lf_allocate(
+                            1, sizeof(trigger_t*),
+                            &vending_machine_machine_self[src_runtime]->base.allocations); 
+                    vending_machine_machine_self[src_runtime]->_lf__reaction_1.triggers[triggers_index[src_runtime]++] = trigger_array;
+                }
+                for (int i = 0; i < 1; i++) triggers_index[i] = 0;
+                // Iterate over ranges Vending_Machine.Machine.change(0,1)->[Vending_Machine.Output.change(0,1)] and Vending_Machine.Output.change(0,1).
+                {
+                    int src_runtime = 0; // Runtime index.
+                    SUPPRESS_UNUSED_WARNING(src_runtime);
+                    int src_channel = 0; // Channel index.
+                    SUPPRESS_UNUSED_WARNING(src_channel);
+                    int src_bank = 0; // Bank index.
+                    SUPPRESS_UNUSED_WARNING(src_bank);
+                    // Iterate over range Vending_Machine.Output.change(0,1).
+                    {
+                        int dst_runtime = 0; SUPPRESS_UNUSED_WARNING(dst_runtime); // Runtime index.
+                        int dst_channel = 0; SUPPRESS_UNUSED_WARNING(dst_channel); // Channel index.
+                        int dst_bank = 0; SUPPRESS_UNUSED_WARNING(dst_bank); // Bank index.
+                        int range_count = 0; SUPPRESS_UNUSED_WARNING(range_count);
+                        // Point to destination port Vending_Machine.Output.change's trigger struct.
+                        vending_machine_machine_self[src_runtime]->_lf__reaction_1.triggers[triggers_index[src_runtime] + src_channel][0] = &vending_machine_output_self[dst_runtime]->_lf__change;
+                    }
+                }
+                for (int i = 0; i < 1; i++) triggers_index[i] = 1;
+                // Iterate over ranges Vending_Machine.Machine.beverage(0,1)->[Vending_Machine.Output.beverage(0,1)] and Vending_Machine.Output.beverage(0,1).
+                {
+                    int src_runtime = 0; // Runtime index.
+                    SUPPRESS_UNUSED_WARNING(src_runtime);
+                    int src_channel = 0; // Channel index.
+                    SUPPRESS_UNUSED_WARNING(src_channel);
+                    int src_bank = 0; // Bank index.
+                    SUPPRESS_UNUSED_WARNING(src_bank);
+                    // Iterate over range Vending_Machine.Output.beverage(0,1).
+                    {
+                        int dst_runtime = 0; SUPPRESS_UNUSED_WARNING(dst_runtime); // Runtime index.
+                        int dst_channel = 0; SUPPRESS_UNUSED_WARNING(dst_channel); // Channel index.
+                        int dst_bank = 0; SUPPRESS_UNUSED_WARNING(dst_bank); // Bank index.
+                        int range_count = 0; SUPPRESS_UNUSED_WARNING(range_count);
+                        // Point to destination port Vending_Machine.Output.beverage's trigger struct.
+                        vending_machine_machine_self[src_runtime]->_lf__reaction_1.triggers[triggers_index[src_runtime] + src_channel][0] = &vending_machine_output_self[dst_runtime]->_lf__beverage;
+                    }
+                }
+                for (int i = 0; i < 1; i++) triggers_index[i] = 2;
+                // Iterate over ranges Vending_Machine.Machine.text(0,1)->[Vending_Machine.Display.text(0,1)] and Vending_Machine.Display.text(0,1).
+                {
+                    int src_runtime = 0; // Runtime index.
+                    SUPPRESS_UNUSED_WARNING(src_runtime);
+                    int src_channel = 0; // Channel index.
+                    SUPPRESS_UNUSED_WARNING(src_channel);
+                    int src_bank = 0; // Bank index.
+                    SUPPRESS_UNUSED_WARNING(src_bank);
+                    // Iterate over range Vending_Machine.Display.text(0,1).
+                    {
+                        int dst_runtime = 0; SUPPRESS_UNUSED_WARNING(dst_runtime); // Runtime index.
+                        int dst_channel = 0; SUPPRESS_UNUSED_WARNING(dst_channel); // Channel index.
+                        int dst_bank = 0; SUPPRESS_UNUSED_WARNING(dst_bank); // Bank index.
+                        int range_count = 0; SUPPRESS_UNUSED_WARNING(range_count);
+                        // Point to destination port Vending_Machine.Display.text's trigger struct.
+                        vending_machine_machine_self[src_runtime]->_lf__reaction_1.triggers[triggers_index[src_runtime] + src_channel][0] = &vending_machine_display_self[dst_runtime]->_lf__text;
+                    }
+                }
+            }
+            {
+                int triggers_index[1] = { 0 }; // Number of bank members with the reaction.
+                // Iterate over range Vending_Machine.Machine.change(0,1)->[Vending_Machine.Output.change(0,1)].
+                {
+                    int src_runtime = 0; SUPPRESS_UNUSED_WARNING(src_runtime); // Runtime index.
+                    int src_channel = 0; SUPPRESS_UNUSED_WARNING(src_channel); // Channel index.
+                    int src_bank = 0; SUPPRESS_UNUSED_WARNING(src_bank); // Bank index.
+                    int range_count = 0; SUPPRESS_UNUSED_WARNING(range_count);
+                    // Reaction 2 of Vending_Machine.Machine triggers 1 downstream reactions
+                    // through port Vending_Machine.Machine.change.
+                    vending_machine_machine_self[src_runtime]->_lf__reaction_2.triggered_sizes[triggers_index[src_runtime]] = 1;
+                    // For reaction 2 of Vending_Machine.Machine, allocate an
+                    // array of trigger pointers for downstream reactions through port Vending_Machine.Machine.change
+                    trigger_t** trigger_array = (trigger_t**)_lf_allocate(
+                            1, sizeof(trigger_t*),
+                            &vending_machine_machine_self[src_runtime]->base.allocations); 
+                    vending_machine_machine_self[src_runtime]->_lf__reaction_2.triggers[triggers_index[src_runtime]++] = trigger_array;
+                }
+                for (int i = 0; i < 1; i++) triggers_index[i] = 0;
+                // Iterate over ranges Vending_Machine.Machine.change(0,1)->[Vending_Machine.Output.change(0,1)] and Vending_Machine.Output.change(0,1).
+                {
+                    int src_runtime = 0; // Runtime index.
+                    SUPPRESS_UNUSED_WARNING(src_runtime);
+                    int src_channel = 0; // Channel index.
+                    SUPPRESS_UNUSED_WARNING(src_channel);
+                    int src_bank = 0; // Bank index.
+                    SUPPRESS_UNUSED_WARNING(src_bank);
+                    // Iterate over range Vending_Machine.Output.change(0,1).
+                    {
+                        int dst_runtime = 0; SUPPRESS_UNUSED_WARNING(dst_runtime); // Runtime index.
+                        int dst_channel = 0; SUPPRESS_UNUSED_WARNING(dst_channel); // Channel index.
+                        int dst_bank = 0; SUPPRESS_UNUSED_WARNING(dst_bank); // Bank index.
+                        int range_count = 0; SUPPRESS_UNUSED_WARNING(range_count);
+                        // Point to destination port Vending_Machine.Output.change's trigger struct.
+                        vending_machine_machine_self[src_runtime]->_lf__reaction_2.triggers[triggers_index[src_runtime] + src_channel][0] = &vending_machine_output_self[dst_runtime]->_lf__change;
+                    }
+                }
+            }
+            {
+                int triggers_index[1] = { 0 }; // Number of bank members with the reaction.
+                // Iterate over range Vending_Machine.Machine.text(0,1)->[Vending_Machine.Display.text(0,1)].
+                {
+                    int src_runtime = 0; SUPPRESS_UNUSED_WARNING(src_runtime); // Runtime index.
+                    int src_channel = 0; SUPPRESS_UNUSED_WARNING(src_channel); // Channel index.
+                    int src_bank = 0; SUPPRESS_UNUSED_WARNING(src_bank); // Bank index.
+                    int range_count = 0; SUPPRESS_UNUSED_WARNING(range_count);
+                    // Reaction 3 of Vending_Machine.Machine triggers 1 downstream reactions
+                    // through port Vending_Machine.Machine.text.
+                    vending_machine_machine_self[src_runtime]->_lf__reaction_3.triggered_sizes[triggers_index[src_runtime]] = 1;
+                    // For reaction 3 of Vending_Machine.Machine, allocate an
+                    // array of trigger pointers for downstream reactions through port Vending_Machine.Machine.text
+                    trigger_t** trigger_array = (trigger_t**)_lf_allocate(
+                            1, sizeof(trigger_t*),
+                            &vending_machine_machine_self[src_runtime]->base.allocations); 
+                    vending_machine_machine_self[src_runtime]->_lf__reaction_3.triggers[triggers_index[src_runtime]++] = trigger_array;
+                }
+                for (int i = 0; i < 1; i++) triggers_index[i] = 0;
+                // Iterate over ranges Vending_Machine.Machine.text(0,1)->[Vending_Machine.Display.text(0,1)] and Vending_Machine.Display.text(0,1).
+                {
+                    int src_runtime = 0; // Runtime index.
+                    SUPPRESS_UNUSED_WARNING(src_runtime);
+                    int src_channel = 0; // Channel index.
+                    SUPPRESS_UNUSED_WARNING(src_channel);
+                    int src_bank = 0; // Bank index.
+                    SUPPRESS_UNUSED_WARNING(src_bank);
+                    // Iterate over range Vending_Machine.Display.text(0,1).
+                    {
+                        int dst_runtime = 0; SUPPRESS_UNUSED_WARNING(dst_runtime); // Runtime index.
+                        int dst_channel = 0; SUPPRESS_UNUSED_WARNING(dst_channel); // Channel index.
+                        int dst_bank = 0; SUPPRESS_UNUSED_WARNING(dst_bank); // Bank index.
+                        int range_count = 0; SUPPRESS_UNUSED_WARNING(range_count);
+                        // Point to destination port Vending_Machine.Display.text's trigger struct.
+                        vending_machine_machine_self[src_runtime]->_lf__reaction_3.triggers[triggers_index[src_runtime] + src_channel][0] = &vending_machine_display_self[dst_runtime]->_lf__text;
+                    }
+                }
+            }
         
         }
         // **** End of non-nested deferred initialize for Vending_Machine.Machine
         // **** Start non-nested deferred initialize for Vending_Machine.Display
         {
         
-        
-        
+            // For reference counting, set num_destinations for port Vending_Machine.Display.display_off.
+            // Iterate over range Vending_Machine.Display.display_off(0,1)->[Vending_Machine.delay.inp(0,1)].
+            {
+                int src_runtime = 0; SUPPRESS_UNUSED_WARNING(src_runtime); // Runtime index.
+                int src_channel = 0; SUPPRESS_UNUSED_WARNING(src_channel); // Channel index.
+                int src_bank = 0; SUPPRESS_UNUSED_WARNING(src_bank); // Bank index.
+                int range_count = 0; SUPPRESS_UNUSED_WARNING(range_count);
+                vending_machine_display_self[src_runtime]->_lf_display_off._base.num_destinations = 1;
+                vending_machine_display_self[src_runtime]->_lf_display_off._base.source_reactor = (self_base_t*)vending_machine_display_self[src_runtime];
+            }
+            {
+                int triggers_index[1] = { 0 }; // Number of bank members with the reaction.
+                // Iterate over range Vending_Machine.Display.display_off(0,1)->[Vending_Machine.delay.inp(0,1)].
+                {
+                    int src_runtime = 0; SUPPRESS_UNUSED_WARNING(src_runtime); // Runtime index.
+                    int src_channel = 0; SUPPRESS_UNUSED_WARNING(src_channel); // Channel index.
+                    int src_bank = 0; SUPPRESS_UNUSED_WARNING(src_bank); // Bank index.
+                    int range_count = 0; SUPPRESS_UNUSED_WARNING(range_count);
+                    // Reaction 1 of Vending_Machine.Display triggers 1 downstream reactions
+                    // through port Vending_Machine.Display.display_off.
+                    vending_machine_display_self[src_runtime]->_lf__reaction_1.triggered_sizes[triggers_index[src_runtime]] = 1;
+                    // For reaction 1 of Vending_Machine.Display, allocate an
+                    // array of trigger pointers for downstream reactions through port Vending_Machine.Display.display_off
+                    trigger_t** trigger_array = (trigger_t**)_lf_allocate(
+                            1, sizeof(trigger_t*),
+                            &vending_machine_display_self[src_runtime]->base.allocations); 
+                    vending_machine_display_self[src_runtime]->_lf__reaction_1.triggers[triggers_index[src_runtime]++] = trigger_array;
+                }
+                for (int i = 0; i < 1; i++) triggers_index[i] = 0;
+                // Iterate over ranges Vending_Machine.Display.display_off(0,1)->[Vending_Machine.delay.inp(0,1)] and Vending_Machine.delay.inp(0,1).
+                {
+                    int src_runtime = 0; // Runtime index.
+                    SUPPRESS_UNUSED_WARNING(src_runtime);
+                    int src_channel = 0; // Channel index.
+                    SUPPRESS_UNUSED_WARNING(src_channel);
+                    int src_bank = 0; // Bank index.
+                    SUPPRESS_UNUSED_WARNING(src_bank);
+                    // Iterate over range Vending_Machine.delay.inp(0,1).
+                    {
+                        int dst_runtime = 0; SUPPRESS_UNUSED_WARNING(dst_runtime); // Runtime index.
+                        int dst_channel = 0; SUPPRESS_UNUSED_WARNING(dst_channel); // Channel index.
+                        int dst_bank = 0; SUPPRESS_UNUSED_WARNING(dst_bank); // Bank index.
+                        int range_count = 0; SUPPRESS_UNUSED_WARNING(range_count);
+                        // Point to destination port Vending_Machine.delay.inp's trigger struct.
+                        vending_machine_display_self[src_runtime]->_lf__reaction_1.triggers[triggers_index[src_runtime] + src_channel][0] = &vending_machine_delay_self[dst_runtime]->_lf__inp;
+                    }
+                }
+            }
         
         }
         // **** End of non-nested deferred initialize for Vending_Machine.Display
+        // **** Start non-nested deferred initialize for Vending_Machine.delay
+        {
+        
+            // For reference counting, set num_destinations for port Vending_Machine.delay.out.
+            // Iterate over range Vending_Machine.delay.out(0,1)->[Vending_Machine.Machine.display_off(0,1)].
+            {
+                int src_runtime = 0; SUPPRESS_UNUSED_WARNING(src_runtime); // Runtime index.
+                int src_channel = 0; SUPPRESS_UNUSED_WARNING(src_channel); // Channel index.
+                int src_bank = 0; SUPPRESS_UNUSED_WARNING(src_bank); // Bank index.
+                int range_count = 0; SUPPRESS_UNUSED_WARNING(range_count);
+                vending_machine_delay_self[src_runtime]->_lf_out._base.num_destinations = 1;
+                vending_machine_delay_self[src_runtime]->_lf_out._base.source_reactor = (self_base_t*)vending_machine_delay_self[src_runtime];
+            }
+            {
+                int triggers_index[1] = { 0 }; // Number of bank members with the reaction.
+                // Iterate over range Vending_Machine.delay.out(0,1)->[Vending_Machine.Machine.display_off(0,1)].
+                {
+                    int src_runtime = 0; SUPPRESS_UNUSED_WARNING(src_runtime); // Runtime index.
+                    int src_channel = 0; SUPPRESS_UNUSED_WARNING(src_channel); // Channel index.
+                    int src_bank = 0; SUPPRESS_UNUSED_WARNING(src_bank); // Bank index.
+                    int range_count = 0; SUPPRESS_UNUSED_WARNING(range_count);
+                    // Reaction 0 of Vending_Machine.delay triggers 1 downstream reactions
+                    // through port Vending_Machine.delay.out.
+                    vending_machine_delay_self[src_runtime]->_lf__reaction_0.triggered_sizes[triggers_index[src_runtime]] = 1;
+                    // For reaction 0 of Vending_Machine.delay, allocate an
+                    // array of trigger pointers for downstream reactions through port Vending_Machine.delay.out
+                    trigger_t** trigger_array = (trigger_t**)_lf_allocate(
+                            1, sizeof(trigger_t*),
+                            &vending_machine_delay_self[src_runtime]->base.allocations); 
+                    vending_machine_delay_self[src_runtime]->_lf__reaction_0.triggers[triggers_index[src_runtime]++] = trigger_array;
+                }
+                for (int i = 0; i < 1; i++) triggers_index[i] = 0;
+                // Iterate over ranges Vending_Machine.delay.out(0,1)->[Vending_Machine.Machine.display_off(0,1)] and Vending_Machine.Machine.display_off(0,1).
+                {
+                    int src_runtime = 0; // Runtime index.
+                    SUPPRESS_UNUSED_WARNING(src_runtime);
+                    int src_channel = 0; // Channel index.
+                    SUPPRESS_UNUSED_WARNING(src_channel);
+                    int src_bank = 0; // Bank index.
+                    SUPPRESS_UNUSED_WARNING(src_bank);
+                    // Iterate over range Vending_Machine.Machine.display_off(0,1).
+                    {
+                        int dst_runtime = 0; SUPPRESS_UNUSED_WARNING(dst_runtime); // Runtime index.
+                        int dst_channel = 0; SUPPRESS_UNUSED_WARNING(dst_channel); // Channel index.
+                        int dst_bank = 0; SUPPRESS_UNUSED_WARNING(dst_bank); // Bank index.
+                        int range_count = 0; SUPPRESS_UNUSED_WARNING(range_count);
+                        // Point to destination port Vending_Machine.Machine.display_off's trigger struct.
+                        vending_machine_delay_self[src_runtime]->_lf__reaction_0.triggers[triggers_index[src_runtime] + src_channel][0] = &vending_machine_machine_self[dst_runtime]->_lf__display_off;
+                    }
+                }
+            }
+        
+        }
+        // **** End of non-nested deferred initialize for Vending_Machine.delay
     }
     // **** End of non-nested deferred initialize for Vending_Machine
     // Connect inputs and outputs for reactor Vending_Machine.
@@ -727,6 +1112,43 @@ void _lf_initialize_trigger_objects() {
         }
     }
     // Connect inputs and outputs for reactor Vending_Machine.Display.
+    // Connect Vending_Machine.Display.display_off(0,1)->[Vending_Machine.delay.inp(0,1)] to port Vending_Machine.delay.inp(0,1)
+    // Iterate over ranges Vending_Machine.Display.display_off(0,1)->[Vending_Machine.delay.inp(0,1)] and Vending_Machine.delay.inp(0,1).
+    {
+        int src_runtime = 0; // Runtime index.
+        SUPPRESS_UNUSED_WARNING(src_runtime);
+        int src_channel = 0; // Channel index.
+        SUPPRESS_UNUSED_WARNING(src_channel);
+        int src_bank = 0; // Bank index.
+        SUPPRESS_UNUSED_WARNING(src_bank);
+        // Iterate over range Vending_Machine.delay.inp(0,1).
+        {
+            int dst_runtime = 0; SUPPRESS_UNUSED_WARNING(dst_runtime); // Runtime index.
+            int dst_channel = 0; SUPPRESS_UNUSED_WARNING(dst_channel); // Channel index.
+            int dst_bank = 0; SUPPRESS_UNUSED_WARNING(dst_bank); // Bank index.
+            int range_count = 0; SUPPRESS_UNUSED_WARNING(range_count);
+            vending_machine_delay_self[dst_runtime]->_lf_inp = (__lf_gendelay_7d472d68_inp_t*)&vending_machine_display_self[src_runtime]->_lf_display_off;
+        }
+    }
+    // Connect inputs and outputs for reactor Vending_Machine.delay.
+    // Connect Vending_Machine.delay.out(0,1)->[Vending_Machine.Machine.display_off(0,1)] to port Vending_Machine.Machine.display_off(0,1)
+    // Iterate over ranges Vending_Machine.delay.out(0,1)->[Vending_Machine.Machine.display_off(0,1)] and Vending_Machine.Machine.display_off(0,1).
+    {
+        int src_runtime = 0; // Runtime index.
+        SUPPRESS_UNUSED_WARNING(src_runtime);
+        int src_channel = 0; // Channel index.
+        SUPPRESS_UNUSED_WARNING(src_channel);
+        int src_bank = 0; // Bank index.
+        SUPPRESS_UNUSED_WARNING(src_bank);
+        // Iterate over range Vending_Machine.Machine.display_off(0,1).
+        {
+            int dst_runtime = 0; SUPPRESS_UNUSED_WARNING(dst_runtime); // Runtime index.
+            int dst_channel = 0; SUPPRESS_UNUSED_WARNING(dst_channel); // Channel index.
+            int dst_bank = 0; SUPPRESS_UNUSED_WARNING(dst_bank); // Bank index.
+            int range_count = 0; SUPPRESS_UNUSED_WARNING(range_count);
+            vending_machine_machine_self[dst_runtime]->_lf_display_off = (_machine_display_off_t*)&vending_machine_delay_self[src_runtime]->_lf_out;
+        }
+    }
     {
         {
             // Add action Vending_Machine.Input.a to array of is_present fields.
@@ -742,16 +1164,28 @@ void _lf_initialize_trigger_objects() {
     {
     }
     {
+        {
+            // Add action Vending_Machine.Machine.a to array of is_present fields.
+            envs[vending_machine_main].is_present_fields[1] 
+                    = &vending_machine_machine_self[0]->_lf_a.is_present;
+            #ifdef FEDERATED_DECENTRALIZED
+            // Add action Vending_Machine.Machine.a to array of intended_tag fields.
+            envs[vending_machine_main]._lf_intended_tag_fields[1] 
+                    = &vending_machine_machine_self[0]->_lf_a.intended_tag;
+            #endif // FEDERATED_DECENTRALIZED
+        }
+    }
+    {
     }
     {
         {
-            // Add action Vending_Machine.Display.a to array of is_present fields.
-            envs[vending_machine_main].is_present_fields[1] 
-                    = &vending_machine_display_self[0]->_lf_a.is_present;
+            // Add action Vending_Machine.delay.act to array of is_present fields.
+            envs[vending_machine_main].is_present_fields[2] 
+                    = &vending_machine_delay_self[0]->_lf_act.is_present;
             #ifdef FEDERATED_DECENTRALIZED
-            // Add action Vending_Machine.Display.a to array of intended_tag fields.
-            envs[vending_machine_main]._lf_intended_tag_fields[1] 
-                    = &vending_machine_display_self[0]->_lf_a.intended_tag;
+            // Add action Vending_Machine.delay.act to array of intended_tag fields.
+            envs[vending_machine_main]._lf_intended_tag_fields[2] 
+                    = &vending_machine_delay_self[0]->_lf_act.intended_tag;
             #endif // FEDERATED_DECENTRALIZED
         }
     }
@@ -759,24 +1193,24 @@ void _lf_initialize_trigger_objects() {
         int count = 0; SUPPRESS_UNUSED_WARNING(count);
         {
             // Add port Vending_Machine.Input.cancel to array of is_present fields.
-            envs[vending_machine_main].is_present_fields[2 + count] = &vending_machine_input_self[0]->_lf_cancel.is_present;
+            envs[vending_machine_main].is_present_fields[3 + count] = &vending_machine_input_self[0]->_lf_cancel.is_present;
             #ifdef FEDERATED_DECENTRALIZED
             // Add port Vending_Machine.Input.cancel to array of intended_tag fields.
-            envs[vending_machine_main]._lf_intended_tag_fields[2 + count] = &vending_machine_input_self[0]->_lf_cancel.intended_tag;
+            envs[vending_machine_main]._lf_intended_tag_fields[3 + count] = &vending_machine_input_self[0]->_lf_cancel.intended_tag;
             #endif // FEDERATED_DECENTRALIZED
             count++;
             // Add port Vending_Machine.Input.sel to array of is_present fields.
-            envs[vending_machine_main].is_present_fields[2 + count] = &vending_machine_input_self[0]->_lf_sel.is_present;
+            envs[vending_machine_main].is_present_fields[3 + count] = &vending_machine_input_self[0]->_lf_sel.is_present;
             #ifdef FEDERATED_DECENTRALIZED
             // Add port Vending_Machine.Input.sel to array of intended_tag fields.
-            envs[vending_machine_main]._lf_intended_tag_fields[2 + count] = &vending_machine_input_self[0]->_lf_sel.intended_tag;
+            envs[vending_machine_main]._lf_intended_tag_fields[3 + count] = &vending_machine_input_self[0]->_lf_sel.intended_tag;
             #endif // FEDERATED_DECENTRALIZED
             count++;
             // Add port Vending_Machine.Input.coin to array of is_present fields.
-            envs[vending_machine_main].is_present_fields[2 + count] = &vending_machine_input_self[0]->_lf_coin.is_present;
+            envs[vending_machine_main].is_present_fields[3 + count] = &vending_machine_input_self[0]->_lf_coin.is_present;
             #ifdef FEDERATED_DECENTRALIZED
             // Add port Vending_Machine.Input.coin to array of intended_tag fields.
-            envs[vending_machine_main]._lf_intended_tag_fields[2 + count] = &vending_machine_input_self[0]->_lf_coin.intended_tag;
+            envs[vending_machine_main]._lf_intended_tag_fields[3 + count] = &vending_machine_input_self[0]->_lf_coin.intended_tag;
             #endif // FEDERATED_DECENTRALIZED
             count++;
         }
@@ -785,24 +1219,48 @@ void _lf_initialize_trigger_objects() {
         int count = 0; SUPPRESS_UNUSED_WARNING(count);
         {
             // Add port Vending_Machine.Machine.change to array of is_present fields.
-            envs[vending_machine_main].is_present_fields[5 + count] = &vending_machine_machine_self[0]->_lf_change.is_present;
+            envs[vending_machine_main].is_present_fields[6 + count] = &vending_machine_machine_self[0]->_lf_change.is_present;
             #ifdef FEDERATED_DECENTRALIZED
             // Add port Vending_Machine.Machine.change to array of intended_tag fields.
-            envs[vending_machine_main]._lf_intended_tag_fields[5 + count] = &vending_machine_machine_self[0]->_lf_change.intended_tag;
+            envs[vending_machine_main]._lf_intended_tag_fields[6 + count] = &vending_machine_machine_self[0]->_lf_change.intended_tag;
             #endif // FEDERATED_DECENTRALIZED
             count++;
             // Add port Vending_Machine.Machine.beverage to array of is_present fields.
-            envs[vending_machine_main].is_present_fields[5 + count] = &vending_machine_machine_self[0]->_lf_beverage.is_present;
+            envs[vending_machine_main].is_present_fields[6 + count] = &vending_machine_machine_self[0]->_lf_beverage.is_present;
             #ifdef FEDERATED_DECENTRALIZED
             // Add port Vending_Machine.Machine.beverage to array of intended_tag fields.
-            envs[vending_machine_main]._lf_intended_tag_fields[5 + count] = &vending_machine_machine_self[0]->_lf_beverage.intended_tag;
+            envs[vending_machine_main]._lf_intended_tag_fields[6 + count] = &vending_machine_machine_self[0]->_lf_beverage.intended_tag;
             #endif // FEDERATED_DECENTRALIZED
             count++;
             // Add port Vending_Machine.Machine.text to array of is_present fields.
-            envs[vending_machine_main].is_present_fields[5 + count] = &vending_machine_machine_self[0]->_lf_text.is_present;
+            envs[vending_machine_main].is_present_fields[6 + count] = &vending_machine_machine_self[0]->_lf_text.is_present;
             #ifdef FEDERATED_DECENTRALIZED
             // Add port Vending_Machine.Machine.text to array of intended_tag fields.
-            envs[vending_machine_main]._lf_intended_tag_fields[5 + count] = &vending_machine_machine_self[0]->_lf_text.intended_tag;
+            envs[vending_machine_main]._lf_intended_tag_fields[6 + count] = &vending_machine_machine_self[0]->_lf_text.intended_tag;
+            #endif // FEDERATED_DECENTRALIZED
+            count++;
+        }
+    }
+    {
+        int count = 0; SUPPRESS_UNUSED_WARNING(count);
+        {
+            // Add port Vending_Machine.Display.display_off to array of is_present fields.
+            envs[vending_machine_main].is_present_fields[9 + count] = &vending_machine_display_self[0]->_lf_display_off.is_present;
+            #ifdef FEDERATED_DECENTRALIZED
+            // Add port Vending_Machine.Display.display_off to array of intended_tag fields.
+            envs[vending_machine_main]._lf_intended_tag_fields[9 + count] = &vending_machine_display_self[0]->_lf_display_off.intended_tag;
+            #endif // FEDERATED_DECENTRALIZED
+            count++;
+        }
+    }
+    {
+        int count = 0; SUPPRESS_UNUSED_WARNING(count);
+        {
+            // Add port Vending_Machine.delay.out to array of is_present fields.
+            envs[vending_machine_main].is_present_fields[10 + count] = &vending_machine_delay_self[0]->_lf_out.is_present;
+            #ifdef FEDERATED_DECENTRALIZED
+            // Add port Vending_Machine.delay.out to array of intended_tag fields.
+            envs[vending_machine_main]._lf_intended_tag_fields[10 + count] = &vending_machine_delay_self[0]->_lf_out.intended_tag;
             #endif // FEDERATED_DECENTRALIZED
             count++;
         }
@@ -827,13 +1285,13 @@ void _lf_initialize_trigger_objects() {
         // Set reaction priorities for ReactorInstance Vending_Machine.Output
         {
             vending_machine_output_self[0]->_lf__reaction_0.chain_id = 1;
-            // index is the OR of level 3 and 
-            // deadline 9223372036854775807 shifted left 16 bits.
-            vending_machine_output_self[0]->_lf__reaction_0.index = 0xffffffffffff0003LL;
-            vending_machine_output_self[0]->_lf__reaction_1.chain_id = 1;
             // index is the OR of level 4 and 
             // deadline 9223372036854775807 shifted left 16 bits.
-            vending_machine_output_self[0]->_lf__reaction_1.index = 0xffffffffffff0004LL;
+            vending_machine_output_self[0]->_lf__reaction_0.index = 0xffffffffffff0004LL;
+            vending_machine_output_self[0]->_lf__reaction_1.chain_id = 1;
+            // index is the OR of level 5 and 
+            // deadline 9223372036854775807 shifted left 16 bits.
+            vending_machine_output_self[0]->_lf__reaction_1.index = 0xffffffffffff0005LL;
         }
     
     
@@ -843,29 +1301,54 @@ void _lf_initialize_trigger_objects() {
             // index is the OR of level 2 and 
             // deadline 9223372036854775807 shifted left 16 bits.
             vending_machine_machine_self[0]->_lf__reaction_0.index = 0xffffffffffff0002LL;
+            vending_machine_machine_self[0]->_lf__reaction_1.chain_id = 1;
+            // index is the OR of level 3 and 
+            // deadline 9223372036854775807 shifted left 16 bits.
+            vending_machine_machine_self[0]->_lf__reaction_1.index = 0xffffffffffff0003LL;
+            vending_machine_machine_self[0]->_lf__reaction_2.chain_id = 1;
+            // index is the OR of level 4 and 
+            // deadline 9223372036854775807 shifted left 16 bits.
+            vending_machine_machine_self[0]->_lf__reaction_2.index = 0xffffffffffff0004LL;
+            vending_machine_machine_self[0]->_lf__reaction_3.chain_id = 1;
+            // index is the OR of level 5 and 
+            // deadline 9223372036854775807 shifted left 16 bits.
+            vending_machine_machine_self[0]->_lf__reaction_3.index = 0xffffffffffff0005LL;
         }
     
     
         // Set reaction priorities for ReactorInstance Vending_Machine.Display
         {
             vending_machine_display_self[0]->_lf__reaction_0.chain_id = 1;
-            // index is the OR of level 3 and 
+            // index is the OR of level 6 and 
             // deadline 9223372036854775807 shifted left 16 bits.
-            vending_machine_display_self[0]->_lf__reaction_0.index = 0xffffffffffff0003LL;
+            vending_machine_display_self[0]->_lf__reaction_0.index = 0xffffffffffff0006LL;
             vending_machine_display_self[0]->_lf__reaction_1.chain_id = 1;
-            // index is the OR of level 4 and 
+            // index is the OR of level 7 and 
             // deadline 9223372036854775807 shifted left 16 bits.
-            vending_machine_display_self[0]->_lf__reaction_1.index = 0xffffffffffff0004LL;
+            vending_machine_display_self[0]->_lf__reaction_1.index = 0xffffffffffff0007LL;
+        }
+    
+    
+        // Set reaction priorities for ReactorInstance Vending_Machine.delay
+        {
+            vending_machine_delay_self[0]->_lf__reaction_0.chain_id = 1;
+            // index is the OR of level 0 and 
+            // deadline 9223372036854775807 shifted left 16 bits.
+            vending_machine_delay_self[0]->_lf__reaction_0.index = 0xffffffffffff0000LL;
+            vending_machine_delay_self[0]->_lf__reaction_1.chain_id = 1;
+            // index is the OR of level 8 and 
+            // deadline 9223372036854775807 shifted left 16 bits.
+            vending_machine_delay_self[0]->_lf__reaction_1.index = 0xffffffffffff0008LL;
         }
     
     }
     
     // Initialize the scheduler
-    size_t num_reactions_per_level[5] = 
-        {1, 1, 1, 2, 2};
+    size_t num_reactions_per_level[9] = 
+        {2, 1, 1, 1, 2, 2, 1, 1, 1};
     sched_params_t sched_params = (sched_params_t) {
                             .num_reactions_per_level = &num_reactions_per_level[0],
-                            .num_reactions_per_level_size = (size_t) 5};
+                            .num_reactions_per_level_size = (size_t) 9};
     lf_sched_init(
         &envs[vending_machine_main],
         envs[vending_machine_main].num_workers,

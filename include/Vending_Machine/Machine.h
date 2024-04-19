@@ -1,8 +1,8 @@
 #ifndef _machine_H
 #define _machine_H
 #ifndef _MACHINE_H // necessary for arduino-cli, which automatically includes headers that are not used
-#ifndef TOP_LEVEL_PREAMBLE_502157791_H
-#define TOP_LEVEL_PREAMBLE_502157791_H
+#ifndef TOP_LEVEL_PREAMBLE_1403888540_H
+#define TOP_LEVEL_PREAMBLE_1403888540_H
 #endif
 #ifdef __cplusplus
 extern "C" {
@@ -17,7 +17,7 @@ typedef struct machine_self_t{
     int* stock;
     int Machine_mode;
     int bev;
-    string charBuffer;
+    bool display_on;
     int end[0]; // placeholder; MSVC does not compile empty structs
 } machine_self_t;
 typedef struct {
@@ -68,6 +68,20 @@ typedef struct {
     size_t length;
     bool is_present;
     lf_port_internal_t _base;
+    int value;
+    #ifdef FEDERATED
+    #ifdef FEDERATED_DECENTRALIZED
+    tag_t intended_tag;
+    #endif
+    interval_t physical_time_of_arrival;
+    #endif
+} machine_display_off_t;
+typedef struct {
+    token_type_t type;
+    lf_token_t* token;
+    size_t length;
+    bool is_present;
+    lf_port_internal_t _base;
     bool value;
     #ifdef FEDERATED
     #ifdef FEDERATED_DECENTRALIZED
@@ -104,5 +118,21 @@ typedef struct {
     interval_t physical_time_of_arrival;
     #endif
 } machine_text_t;
+typedef struct {
+    token_type_t type;
+    lf_token_t* token;
+    size_t length;
+    bool is_present;
+    lf_action_internal_t _base;
+    self_base_t* parent;
+    bool has_value;
+
+    #ifdef FEDERATED
+    #ifdef FEDERATED_DECENTRALIZED
+    tag_t intended_tag;
+    #endif
+    interval_t physical_time_of_arrival;
+    #endif
+} machine_a_t;
 #endif
 #endif

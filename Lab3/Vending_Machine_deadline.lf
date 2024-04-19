@@ -1,0 +1,184 @@
+target C 
+import Output, Input from "vm_extra.lf"
+
+reactor Machine(stock:int[] = {2,2,2}){
+    preamble {=
+        #include <string.h>
+        enum machine_mode {
+            Idle = 0, 
+            Selected = 1, 
+            Payed = 2
+        };
+        char buf[100];
+    =}
+    input cancel:bool
+    input sel:int
+    input coin:bool
+    input displayed: int
+
+    output change:bool
+    output beverage:int
+    output text:string
+    output dead: int
+
+    state Machine_mode: int = 0;
+    state bev: int = 0;
+    state charBuffer:string
+
+    
+
+    reaction(coin, sel, cancel, displayed) -> change, beverage, text,dead{=
+        lf_set(dead, 0);
+        instant_t start_time = lf_time_logical_elapsed();
+        bool triggered = true;
+        while(lf_time_logical_elapsed() - start_time < 100000000 && triggered){
+            if(coin -> is_present){
+                triggered = false;
+            printf("[DEBUG] Coin detected. State: %d \n", self -> Machine_mode);
+                switch(self -> Machine_mode) {
+                    case Idle:
+                        self -> Machine_mode = Payed;
+                        sprintf(buf,"Coin recieved. Please make a selection.\n");
+                        lf_set(text, buf);
+                        break;
+                    case Selected:
+                        if(self -> stock[self  -> bev] != 0){
+                            lf_set(beverage, self -> bev);
+                            self -> stock[self  -> bev]--;
+                            self -> Machine_mode = Idle;
+                            sprintf(buf, "Coin recieved. Please take your beverage.\n");
+                            lf_set(text, buf);
+                        }else{
+                            self -> Machine_mode = Selected;
+                            sprintf(buf, "Coin recieved. There are no more of that bevereage, please choose something else.\n");
+                            lf_set(text, buf);
+                        }
+                        
+                        break;
+                    case Payed:
+                        lf_set(change, true);
+                        self -> Machine_mode = Payed;
+                        sprintf(buf,"Coin recieved. Coin already in machine. Please pick up change.\n");
+                        lf_set(text, buf);
+                        break;
+                }
+            }
+
+            if(sel -> is_present){
+                triggered = false;
+                printf("[DEBUG] Selection detected. State: %d \n", self -> Machine_mode);
+                switch(self -> Machine_mode) {
+                    case Idle:
+                        if(sel -> value <= 2 && sel -> value >= 0){
+                            self -> Machine_mode = Selected;
+                            self -> bev = sel -> value;
+                            sprintf(buf, "Selection made : %d. Please put in a coin. \n", sel -> value);
+                            lf_set(text, buf);
+                        }else{
+                            self -> Machine_mode = Idle;
+                            sprintf(buf, "Not a viable selection. Please select again.\n");
+                            lf_set(text, buf);
+                        }
+                        break;
+                    case Selected:
+                        if(sel -> value <= 2 && sel -> value >= 0){
+                            self -> Machine_mode = Selected;
+                            self -> bev = sel -> value;
+                            sprintf(buf, "Selection changed : %d. Please put in a coin. \n", sel -> value);
+                            lf_set(text, buf);
+                        }else{
+                            self -> Machine_mode = Idle;
+                            sprintf(buf, "Not a viable selection. Please select again.\n");
+                            lf_set(text, buf);
+                        }
+                        break;
+                    case Payed:
+                        if(sel -> value <= 2 && sel -> value >= 0){
+                            if(self -> stock[sel -> value] != 0){
+                                lf_set(beverage, sel -> value);
+                                self -> stock[sel  -> value]--;
+                                self -> Machine_mode = Idle;
+                                self -> bev = 0;
+                                sprintf(buf, "Selection made : %d. Please pick up your beverage. \n", sel -> value);
+                                lf_set(text, buf);
+                            }else{
+                                self -> Machine_mode = Payed;
+                                sprintf(buf, "Beverage out of stock. Please select again. \n");
+                                lf_set(text, buf);
+                            }
+                        }else{
+                            self -> Machine_mode = Payed;
+                            sprintf(buf, "Not a viable selection. Please select again. \n");
+                            lf_set(text, buf);
+                        }
+                        break;
+                }
+            }
+
+            if(cancel -> is_present){
+                triggered = false;
+            printf("[DEBUG] Cancellation detected. State: %d \n", self -> Machine_mode);
+            switch(self -> Machine_mode) {
+                    case Idle:
+                        self -> Machine_mode = Idle;
+                        break;
+                    case Selected:
+                        self -> Machine_mode = Idle;
+                        self -> bev = 0;
+                        sprintf(buf, "Purchase canceled. \n");
+                        lf_set(text, buf);
+                        break;
+                    case Payed:
+                        lf_set(change, true);
+                        sprintf(buf, "Purchase canceled. Please pick up change.\n");
+                        lf_set(text, buf);
+                        self -> Machine_mode = Idle;
+                        break;
+                }
+            }
+        }
+        printf("[DEBUG] Timer done");
+    =}
+
+    
+
+}
+
+reactor Display{
+    preamble{=
+        #include <string.h>
+    =}
+    input text: string
+    input dead: int
+
+    output displayed: int
+    state count: int = 0;
+    state display_on: bool = false;
+    
+
+    reaction(text, dead) -> displayed{=
+        printf("[DISPLAY] %s", text -> value);
+        self -> count = 0;
+        self -> display_on = true;
+        lf_set(displayed, 0);
+        
+    =}deadline(10 msec){=
+        printf("[DISPLAY] Display off. \n");
+    =}
+}
+
+main reactor{
+    Input = new Input()
+    Output = new Output()
+    Machine = new Machine()
+    Display = new Display()
+    
+    Input.cancel -> Machine.cancel
+    Input.sel -> Machine.sel
+    Input.coin -> Machine.coin
+    Machine.change -> Output.change
+    Machine.beverage -> Output.beverage
+    Machine.text -> Display.text
+    Machine.dead -> Display.dead
+    Display.displayed -> Machine.displayed after 0
+}

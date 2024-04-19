@@ -211,6 +211,30 @@ Vending_Machine.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vending_Machine.dir/build.make CMakeFiles/Vending_Machine.dir/Vending_Machine.c.s
 .PHONY : Vending_Machine.c.s
 
+__lf_gendelay_7d472d68.o: __lf_gendelay_7d472d68.c.o
+.PHONY : __lf_gendelay_7d472d68.o
+
+# target to build an object file
+__lf_gendelay_7d472d68.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vending_Machine.dir/build.make CMakeFiles/Vending_Machine.dir/__lf_gendelay_7d472d68.c.o
+.PHONY : __lf_gendelay_7d472d68.c.o
+
+__lf_gendelay_7d472d68.i: __lf_gendelay_7d472d68.c.i
+.PHONY : __lf_gendelay_7d472d68.i
+
+# target to preprocess a source file
+__lf_gendelay_7d472d68.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vending_Machine.dir/build.make CMakeFiles/Vending_Machine.dir/__lf_gendelay_7d472d68.c.i
+.PHONY : __lf_gendelay_7d472d68.c.i
+
+__lf_gendelay_7d472d68.s: __lf_gendelay_7d472d68.c.s
+.PHONY : __lf_gendelay_7d472d68.s
+
+# target to generate assembly for a file
+__lf_gendelay_7d472d68.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Vending_Machine.dir/build.make CMakeFiles/Vending_Machine.dir/__lf_gendelay_7d472d68.c.s
+.PHONY : __lf_gendelay_7d472d68.c.s
+
 _display.o: _display.c.o
 .PHONY : _display.o
 
@@ -372,6 +396,9 @@ help:
 	@echo "... Vending_Machine.o"
 	@echo "... Vending_Machine.i"
 	@echo "... Vending_Machine.s"
+	@echo "... __lf_gendelay_7d472d68.o"
+	@echo "... __lf_gendelay_7d472d68.i"
+	@echo "... __lf_gendelay_7d472d68.s"
 	@echo "... _display.o"
 	@echo "... _display.i"
 	@echo "... _display.s"

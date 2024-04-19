@@ -42,6 +42,9 @@ endif()
 if (NOT DEFINED SCHEDULER)
     set(SCHEDULER SCHED_NP)
 endif()
+if (NOT DEFINED MODAL_REACTORS)
+    set(MODAL_REACTORS TRUE)
+endif()
 if (NOT DEFINED LOG_LEVEL)
     set(LOG_LEVEL 2)
 endif()
@@ -58,6 +61,7 @@ add_executable(
     _output.c
     _machine.c
     _display.c
+    __lf_gendelay_7d472d68.c
     Vending_Machine.c
 )
 

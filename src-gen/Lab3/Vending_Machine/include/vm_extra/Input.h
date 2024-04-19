@@ -1,8 +1,8 @@
 #ifndef _input_H
 #define _input_H
 #ifndef _INPUT_H // necessary for arduino-cli, which automatically includes headers that are not used
-#ifndef TOP_LEVEL_PREAMBLE_1184735558_H
-#define TOP_LEVEL_PREAMBLE_1184735558_H
+#ifndef TOP_LEVEL_PREAMBLE_270365049_H
+#define TOP_LEVEL_PREAMBLE_270365049_H
 #endif
 #ifdef __cplusplus
 extern "C" {

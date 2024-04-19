@@ -1,8 +1,8 @@
 #ifndef _INPUT_H
 #define _INPUT_H
 #include "include/core/reactor.h"
-#ifndef TOP_LEVEL_PREAMBLE_1184735558_H
-#define TOP_LEVEL_PREAMBLE_1184735558_H
+#ifndef TOP_LEVEL_PREAMBLE_270365049_H
+#define TOP_LEVEL_PREAMBLE_270365049_H
 #endif
 typedef struct {
     token_type_t type;

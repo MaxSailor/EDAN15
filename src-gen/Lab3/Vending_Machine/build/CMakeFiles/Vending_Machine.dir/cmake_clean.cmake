@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Vending_Machine.dir/Vending_Machine.c.o"
   "CMakeFiles/Vending_Machine.dir/Vending_Machine.c.o.d"
+  "CMakeFiles/Vending_Machine.dir/__lf_gendelay_7d472d68.c.o"
+  "CMakeFiles/Vending_Machine.dir/__lf_gendelay_7d472d68.c.o.d"
   "CMakeFiles/Vending_Machine.dir/_display.c.o"
   "CMakeFiles/Vending_Machine.dir/_display.c.o.d"
   "CMakeFiles/Vending_Machine.dir/_input.c.o"
